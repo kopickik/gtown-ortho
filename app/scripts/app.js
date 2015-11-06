@@ -21,10 +21,10 @@
             data : { pateTitle : 'About the Office: Meet the Doctor' },
             controller : 'theDoctorCtrl',
             controllerAs : 'ctrl'
-        }).state('.about.officeTour', { // About: Office Tour
+        }).state('about.officeTour', { // About: Office Tour
             url : '/office-tour',
-            templateUrl : './vies/about/officeTour.html',
-            data : { pageTitle : 'Aobut the Office: Office Tour' },
+            templateUrl : './views/about/officeTour.html',
+            data : { pageTitle : 'About the Office: Office Tour' },
             controller : 'officeTourCtrl',
             controllerAs : 'ctrl'
         }).state('newPatients', { // New Patients
@@ -57,57 +57,57 @@
             data : { pageTitle : 'New Patients: Referral Program' },
             controller : 'referralCtrl',
             controllerAs : 'ctrl'
-        }).state('ortho101', {
+        }).state('ortho', { // Orthodontics 101
             url : '/orthodontics-101',
-            template : './views/orthodontics/orthodontics101.html',
+            templateUrl : './views/orthodontics/orthodontics101.html',
             data : { pageTitle : 'Orthodontics 101' },
             controller : 'orthodonticsCtrl',
             controllerAs : 'ctrl'
-        }).state('ortho101.servicesOffered', {
+        }).state('ortho.servicesOffered', { // Services Offered
             url : '/services-offered',
-            template : './views/orthodontics/servicesOffered.html',
+            templateUrl : './views/orthodontics/servicesOffered.html',
             data : { pageTitle : 'Orthodontics 101: Services Offered' },
             controller : 'servicesCtrl',
             controllerAs : 'ctrl'
-        }).state('ortho101.applianceCare', {
+        }).state('ortho.applianceCare', { // Appliance Care
             url : '/appliance-care',
-            template : './views/orthodontics/applianceCare.html',
+            templateUrl : './views/orthodontics/applianceCare.html',
             data : { pageTitle : 'Orthodontics 101: Appliance Care' },
             controller : 'applianceCareCtrl',
             controllerAs : 'ctrl'
-        }).state('ortho101.faq', {
+        }).state('ortho.faq', { // FAQ's
             url : '/faq',
-            template : './views/orthodontics/faq.html',
+            templateUrl : './views/orthodontics/faq.html',
             data : { pageTitle : 'Orthodontics 101: FAQ\'s' },
             controller : 'faqCtrl',
             controllerAs : 'ctrl'
-        }).state('ortho101.treatmentTiming', {
+        }).state('ortho.treatmentTiming', { // Timing of Treatment
             url : '/timing-of-treatment',
-            template : './views/orthodontics/treatmentTiming.html',
+            templateUrl : './views/orthodontics/treatmentTiming.html',
             data : { pageTitle : 'Orthodontics 101: Timing of Treatment' },
             controller : 'timingCtrl',
             controllerAs : 'ctrl'
-        }).state('difference', {
+        }).state('difference', { // The Kopicki Difference
             url : '/the-kopicki-difference',
-            template : './views/difference/difference.html',
+            templateUrl : './views/difference/difference.html',
             data : { pageTitle : 'The Kopicki Difference' },
             controller : 'differenceCtrl',
             controllerAs : 'ctrl'
-        }).state('difference.beforeAndAfter', {
+        }).state('difference.beforeAndAfter', { // Before and After
             url : '/before-and-after',
-            template : './views/difference/beforeAndAfter.html',
+            templateUrl : './views/difference/beforeAndAfter.html',
             data : { pageTitle : 'The Kopicki Difference: Before and After' },
             controller : 'beforeAfterCtrl',
             controllerAs : 'ctrl'
-        }).state('difference.testimonials', {
+        }).state('difference.testimonials', { // Patient Testimonials
             url : '/patient-testimonials',
-            template : './views/difference/patientTestimonials.html',
+            templateUrl : './views/difference/patientTestimonials.html',
             data : { pageTitle : 'The Kopicki Difference: Patient Testimonials' },
             controller : 'testimonialsCtrl',
             controllerAs : 'ctrl'
-        }).state('difference.setUsApart', {
+        }).state('difference.setUsApart', { // What Sets Us Apart
             url : '/what-sets-us-apart',
-            template : './views/difference/setsUsApart.html',
+            templateUrl : './views/difference/setsUsApart.html',
             data : { pageTitle : 'The Kopicki Difference: What Sets Us Apart' },
             controller : 'apartCtrl',
             controllerAs : 'ctrl'

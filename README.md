@@ -4,9 +4,9 @@ This project is generated with [yo angular generator](https://github.com/yeoman/
 version 0.11.1.
 
 ## Build & development
-Run `npm install` to install project utilities.
-RUn `bower install` to install project dependencies.
-Run `grunt` for building and `grunt serve` for preview.
+1. Run `npm install` to install project utilities.
+2. Run `bower install` to install project dependencies.
+3. Run `grunt` for building and `grunt serve` for preview.
 
 ## Testing
 

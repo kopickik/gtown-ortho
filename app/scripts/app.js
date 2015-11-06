@@ -18,7 +18,7 @@
         }).state('about.meetTheDoc', { // About: Meet the Doctor
             url : '/meet-the-doctor',
             templateUrl : './views/about/meetTheDoc.html',
-            data : { pateTitle : 'About the Office: Meet the Doctor' },
+            data : { pageTitle : 'About the Office: Meet the Doctor' },
             controller : 'theDoctorCtrl',
             controllerAs : 'ctrl'
         }).state('about.officeTour', { // About: Office Tour
@@ -36,19 +36,19 @@
         }).state('newPatients.expectations', { // New Patients: What to Expect
             url : '/expectations',
             templateUrl : './views/patients/expectations.html',
-            data : { pateTitle : 'New Patients: What to Expect' },
+            data : { pageTitle : 'New Patients: What to Expect' },
             controller : 'expectationsCtrl',
             controllerAs : 'ctrl'
         }).state('newPatients.paymentInsurance',  { // New Patients: Payments and Insurance
             url : '/payments-and-insurance',
             templateUrl : './views/patients/paymentsInsurance.html',
-            data : { pateTitle : 'New Patients: Payments and Insurance' },
+            data : { pageTitle : 'New Patients: Payments and Insurance' },
             controller : 'paymentsInsuranceCtrl',
             controllerAs : 'ctrl'
         }).state('newPatients.forms', { // New Patients: Forms
             url : '/forms',
             templateUrl : './views/patients/forms.html',
-            data : { pateTitle : 'New Patients: Forms' },
+            data : { pageTitle : 'New Patients: Forms' },
             controller : 'formsCtrl',
             controllerAs : 'ctrl'
         }).state('newPatients.referral', { // New Patients: Referral Program
@@ -111,7 +111,13 @@
             data : { pageTitle : 'The Kopicki Difference: What Sets Us Apart' },
             controller : 'apartCtrl',
             controllerAs : 'ctrl'
-        });
+        }).state('contact', { // Contact Us
+			url : '/contact-us',
+			templateUrl : './views/contact.html',
+			data : { pageTitle : 'Contact Us' },
+			controller : 'contactCtrl',
+			controllerAs : 'ctrl'
+		});
     });
 
     gtoApp.config(function($logProvider) {
@@ -123,13 +129,13 @@
         $rootScope.$on('$stateChangeStart', function(event, toState, toParams, fromState, fromParams) {
             $rootScope.loading = true;
             $rootScope.navOpen = false;
-            $log.debug(event, toState, toParams, fromState, fromParams);
+            $log.debug('$stateChangeStart:', event, toState, toParams, fromState, fromParams);
         });
 
         $rootScope.$on('$stateChangeSuccess', function (event, toState, toParams, fromState, fromParams) {
             $rootScope.loading = false;
             if (!ga) { return; }
-            $log.debug(event, toState, toParams, fromState, fromParams);
+            $log.debug('$stateChangeSuccess:',event, toState, toParams, fromState, fromParams);
 
             //ga('send', 'pageview', { page: toState.data.pageTitle }); // Google Analytics
         });

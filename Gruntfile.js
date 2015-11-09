@@ -53,6 +53,27 @@ module.exports = function (grunt) {
             }
         },
 
+        // Custom Sass task - offers ability to edit bootstrap defaults, import custom Sass, etc.
+        sass: {
+            dist: {
+                files: [{
+                    expand: true,
+                    cwd: '<%= yeoman.app %>/styles/sass',
+                    src: ['*.scss'],
+                    dest: '<%= yeoman.app %>/styles',
+                    ext: '.css'
+                    
+                }],
+                options: [{
+                    loadPath: [
+                    // Add bower_components ruby gems components here.
+                    // For example: 'bower_components/bourbon/dist'
+                    // We will take care of this another way ;)
+                    ]
+                }]
+            }
+        },
+
         // Watches files for changes and runs tasks based on the changed files
         watch: {
             bower: {
@@ -71,8 +92,8 @@ module.exports = function (grunt) {
                 tasks: ['newer:jshint:test', 'karma']
             },
             styles: {
-                files: ['<%= yeoman.app %>/styles/*/*.css'],
-                tasks: ['newer:copy:styles', 'autoprefixer']
+                files: ['<%= yeoman.app %>/styles/{*,}/*.scss'],
+                tasks: ['sass','newer:copy:styles', 'autoprefixer']
             },
             gruntfile: {
                 files: ['Gruntfile.js']
@@ -435,6 +456,7 @@ module.exports = function (grunt) {
             'clean:server',
             'includeSource:app',
             'wiredep',
+            'sass',
             'concurrent:server',
             'autoprefixer:server',
             'connect:livereload',

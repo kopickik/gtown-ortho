@@ -254,6 +254,9 @@ module.exports = function (grunt) {
                         }
                     }
                 }
+            },
+            exclude: {
+                src: 'bower_components/bootstrap/dist/css/bootstrap.css'
             }
         },
 

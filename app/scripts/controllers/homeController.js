@@ -9,7 +9,8 @@ function HomeController($log, $rootScope, $scope, $state) {
         "Have you been eating cheese, Charlie?",
         "Bacon & Scrambled eggs!",
         ":) :) :(",
-        "One more, 'cause Mickey loves ya!"
+        "One more, 'cause Mickey loves ya!",
+        "Scrambled helms & croquettes"
     ];
     // fade border-fade hollow trim ripple-out ripple-in outline-out outline-in round-corners
     // underline-from-left underline-from-center underline-from-right float-shadow

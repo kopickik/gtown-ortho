@@ -33,6 +33,13 @@ function HomeController($log, $rootScope, $scope, $state) {
         }).addClass(hoverClasses[_.random(6)]);
     };
 
+    // Balls.
+    var getClash = function(xPos) {
+        vm.xPos = xPos;
+        console.log('Shippensburg', vm);
+    }
+    getClash(false);
+
 
 }
 

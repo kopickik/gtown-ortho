@@ -23,9 +23,26 @@ body {
 }
 
 
+//====== Navbar
+.navbar-default {
+    background: linear-gradient();
+    border-radius: 0;
+}
 
-// Hero slider
-// ===========
+// Index.html (one class which contains the ui-view)
+//==================================================
+.index-html {
+    
+}
+
+// Home.html
+// =========
+.home-content{
+    & h1 {
+        font-size: 4em;
+        padding: 1rem;
+    }
+}
 
 
 

@@ -1,6 +1,6 @@
 (function() {
     'use strict';
-    var gtoApp = angular.module('gtoApp', ['ngAnimate', 'ngCookies', 'ngSanitize', 'ngTouch', 'ui.router']);
+    var gtoApp = angular.module('gtoApp', ['ngAnimate', 'ngCookies', 'ngSanitize', 'ngTouch', 'ui.router', 'anim-in-out']);
     gtoApp.config(function($stateProvider, $urlRouterProvider) {
         $urlRouterProvider.otherwise('/home');
         $stateProvider.state('home', { // Home
@@ -126,19 +126,19 @@
 
     gtoApp.run(['$rootScope', '$state', '$log',  function ($rootScope, $state, $log) {
         $rootScope.$state = $state;
-        $rootScope.$on('$stateChangeStart', function(event, toState, toParams, fromState, fromParams) {
-            $rootScope.loading = true;
-            $rootScope.navOpen = false;
-            $log.debug('$stateChangeStart:', event, toState, toParams, fromState, fromParams);
-        });
+        // $rootScope.$on('$stateChangeStart', function(event, toState, toParams, fromState, fromParams) {
+        //     $rootScope.loading = true;
+        //     $rootScope.navOpen = false;
+        //     $log.debug('$stateChangeStart:', event, toState, toParams, fromState, fromParams);
+        // });
 
-        $rootScope.$on('$stateChangeSuccess', function (event, toState, toParams, fromState, fromParams) {
-            $rootScope.loading = false;
-            if (!ga) { return; }
-            $log.debug('$stateChangeSuccess:',event, toState, toParams, fromState, fromParams);
+        // $rootScope.$on('$stateChangeSuccess', function (event, toState, toParams, fromState, fromParams) {
+        //     $rootScope.loading = false;
+        //     if (!ga) { return; }
+        //     $log.debug('$stateChangeSuccess:',event, toState, toParams, fromState, fromParams);
 
-            //ga('send', 'pageview', { page: toState.data.pageTitle }); // Google Analytics
-        });
+        //     //ga('send', 'pageview', { page: toState.data.pageTitle }); // Google Analytics
+        // });
     }]);
 
 })();

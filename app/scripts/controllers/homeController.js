@@ -34,12 +34,11 @@ function HomeController($log, $rootScope, $scope, $state) {
     };
 
     // Balls.
-    var getClash = function(xPos) {
+    $scope.getClash = function(xPos) {
         vm.xPos = xPos;
         console.log('Shippensburg', vm);
     }
-    getClash(false);
-
+    $scope.getClash($(".home-content h1"));
 
 }
 

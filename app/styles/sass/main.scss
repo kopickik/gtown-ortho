@@ -5,9 +5,47 @@
 @import 'init';
 
 // Variables (that I'm using in main styles)
-// Example:
+// =========
 $fancy_font: 'proxima_novaregular', Palatino,"Palatino Linotype","Palatino LT STD","Book Antiqua",Georgia,serif;
 $cloister: 'cloister_blacklight', Palatino,"Palatino Linotype","Palatino LT STD","Book Antiqua",Georgia,serif;
+
+/* *** ________                                    __                     
+*   /  _____/  ___________  _____ _____    _____/  |_  ______  _  ______  
+*  /   \  ____/ __ \_  __ \/     \\__  \  /    \   __\/  _ \ \/ \/ /    \ 
+*  \    \_\  \  ___/|  | \/  Y Y  \/ __ \|   |  \  | (  <_> )     /   |  \
+*   \______  /\___  >__|  |__|_|  (____  /___|  /__|  \____/ \/\_/|___|  /
+*           \/     \/            \/     \/     \/                       \/
+* ***________          __  .__               .___             __  .__               
+*    \_____  \________/  |_|  |__   ____   __| _/____   _____/  |_|__| ____   ______
+*     /   |   \_  __ \   __\  |  \ /  _ \ / __ |/  _ \ /    \   __\  |/ ___\ /  ___/
+*    /    |    \  | \/|  | |   Y  (  <_> ) /_/ (  <_> )   |  \  | |  \  \___ \___ \ 
+*    \_______  /__|   |__| |___|  /\____/\____ |\____/|___|  /__| |__|\___  >____  >
+*            \/                 \/            \/           \/             \/     \/ 
+*/
+
+/*
+* TABLE OF CONTENTS:
+*
+* 1. pages (layouts)
+* 2. components (buttons, alerts)
+* 3. more animations
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .browsehappy {
     margin: 0.2em 0;
     background: #ccc;
@@ -18,6 +56,7 @@ $cloister: 'cloister_blacklight', Palatino,"Palatino Linotype","Palatino LT STD"
 
 body {
     padding: 0;
+    height: 100%;
     font-family: $fancy_font;
 
 }
@@ -45,16 +84,20 @@ body {
 }
 
 
-
 // Footer
 // ======
 
 .footer {
+    position: absolute;
+    bottom: 0;
+    .footer-content {
+        padding: 1.2em;
+        text-align: center;
+    }
     .icon-heart {
         color: red;
         font-weight: 700;
-        // LOL
-        //text-shadow: 0 2px 0 yellow, -2px 4px 0 green, 2px 4px 2px lime, -4px 8px 2px purple, 4px 8px 2px orange, -6px 12px 2px aqua, 6px 12px 2px brown;
+        text-shadow: 0 2px 0 yellow, -2px 4px 0 green, 2px 4px 2px lime, -4px 8px 2px purple, 4px 8px 2px orange, -6px 12px 2px aqua, 6px 12px 2px brown;
     }
 }
 
@@ -62,3 +105,36 @@ body {
 @media screen and (min-width: 768px) {
 
 }
+
+
+// Alternate buttons
+// --------------------------------------------------
+$btn-cstm-color:               #eb8 !default;
+$btn-cstm-bg:                  $brand-danger !default;
+$btn-cstm-border:              darken($btn-cstm-bg, 5%) !default;
+
+.btn-cstm {
+  @include button-variant($btn-cstm-color, $btn-cstm-bg, $btn-cstm-border);
+  border-width: .6rem;
+}
+
+// Cool headers
+// ------------
+.cool-header {
+    font-family: $cloister;
+    font-size: 2.1em;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

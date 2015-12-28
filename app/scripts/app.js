@@ -1,6 +1,6 @@
 (function() {
     'use strict';
-    var gtoApp = angular.module('gtoApp', ['ngAnimate', 'ngCookies', 'ngSanitize', 'ngTouch', 'ui.router', 'anim-in-out']);
+    var gtoApp = angular.module('gtoApp', ['ngAnimate', 'ngCookies', 'ngSanitize', 'ngTouch', 'ui.router']);
     gtoApp.config(function($stateProvider, $urlRouterProvider) {
         $urlRouterProvider.otherwise('/home');
         $stateProvider.state('home', { // Home

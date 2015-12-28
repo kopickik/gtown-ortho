@@ -9749,6 +9749,25 @@ Examples of other init imports:
 @import "block-grid";
 @import "thumbs";
 */
+/* *** ________                                    __                     
+*   /  _____/  ___________  _____ _____    _____/  |_  ______  _  ______  
+*  /   \  ____/ __ \_  __ \/     \\__  \  /    \   __\/  _ \ \/ \/ /    \ 
+*  \    \_\  \  ___/|  | \/  Y Y  \/ __ \|   |  \  | (  <_> )     /   |  *   \______  /\___  >__|  |__|_|  (____  /___|  /__|  \____/ \/\_/|___|  /
+*           \/     \/            \/     \/     \/                       \/
+* ***________          __  .__               .___             __  .__               
+*    \_____  \________/  |_|  |__   ____   __| _/____   _____/  |_|__| ____   ______
+*     /   |   \_  __ \   __\  |  \ /  _ \ / __ |/  _ \ /    \   __\  |/ ___\ /  ___/
+*    /    |    \  | \/|  | |   Y  (  <_> ) /_/ (  <_> )   |  \  | |  \  \___ \___ \ 
+*    \_______  /__|   |__| |___|  /\____/\____ |\____/|___|  /__| |__|\___  >____  >
+*            \/                 \/            \/           \/             \/     \/ 
+*/
+/*
+* TABLE OF CONTENTS:
+*
+* 1. pages (layouts)
+* 2. components (buttons, alerts)
+* 3. more animations
+*/
 .browsehappy {
   margin: 0.2em 0;
   background: #ccc;
@@ -9757,6 +9776,7 @@ Examples of other init imports:
 
 body {
   padding: 0;
+  height: 100%;
   font-family: "proxima_novaregular", Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif; }
 
 .navbar-default {
@@ -9767,8 +9787,59 @@ body {
   font-size: 4em;
   padding: 1rem; }
 
-.footer .icon-heart {
-  color: red;
-  font-weight: 700; }
+.footer {
+  position: absolute;
+  bottom: 0; }
+  .footer .footer-content {
+    padding: 1.2em;
+    text-align: center; }
+  .footer .icon-heart {
+    color: red;
+    font-weight: 700;
+    text-shadow: 0 2px 0 yellow, -2px 4px 0 green, 2px 4px 2px lime, -4px 8px 2px purple, 4px 8px 2px orange, -6px 12px 2px aqua, 6px 12px 2px brown; }
 
 /* Responsive: Portrait tablets and up */
+.btn-cstm {
+  color: #eb8;
+  background-color: #d9534f;
+  border-color: #d43f3a;
+  border-width: .6rem; }
+  .btn-cstm:focus, .btn-cstm.focus {
+    color: #eb8;
+    background-color: #c9302c;
+    border-color: #761c19; }
+  .btn-cstm:hover {
+    color: #eb8;
+    background-color: #c9302c;
+    border-color: #ac2925; }
+  .btn-cstm:active, .btn-cstm.active,
+  .open > .btn-cstm.dropdown-toggle {
+    color: #eb8;
+    background-color: #c9302c;
+    border-color: #ac2925; }
+    .btn-cstm:active:hover, .btn-cstm:active:focus, .btn-cstm:active.focus, .btn-cstm.active:hover, .btn-cstm.active:focus, .btn-cstm.active.focus,
+    .open > .btn-cstm.dropdown-toggle:hover,
+    .open > .btn-cstm.dropdown-toggle:focus,
+    .open > .btn-cstm.dropdown-toggle.focus {
+      color: #eb8;
+      background-color: #ac2925;
+      border-color: #761c19; }
+  .btn-cstm:active, .btn-cstm.active,
+  .open > .btn-cstm.dropdown-toggle {
+    background-image: none; }
+  .btn-cstm.disabled, .btn-cstm.disabled:hover, .btn-cstm.disabled:focus, .btn-cstm.disabled.focus, .btn-cstm.disabled:active, .btn-cstm.disabled.active, .btn-cstm[disabled], .btn-cstm[disabled]:hover, .btn-cstm[disabled]:focus, .btn-cstm[disabled].focus, .btn-cstm[disabled]:active, .btn-cstm[disabled].active,
+  fieldset[disabled] .btn-cstm,
+  fieldset[disabled] .btn-cstm:hover,
+  fieldset[disabled] .btn-cstm:focus,
+  fieldset[disabled] .btn-cstm.focus,
+  fieldset[disabled] .btn-cstm:active,
+  fieldset[disabled] .btn-cstm.active {
+    background-color: #d9534f;
+    border-color: #d43f3a; }
+  .btn-cstm .badge {
+    color: #d9534f;
+    background-color: #eb8; }
+
+.cool-header {
+  font-family: "cloister_blacklight", Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;
+  font-size: 2.1em; }

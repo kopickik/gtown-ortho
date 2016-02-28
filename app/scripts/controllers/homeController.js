@@ -38,7 +38,7 @@ function HomeController($log, $rootScope, $scope, $state) {
         vm.xPos = xPos;
         console.log('Shippensburg', vm);
     }
-    $scope.getClash($(".home-content h1"));
+    $scope.getClash(angular.element(".home-content h1"));
 
 }
 

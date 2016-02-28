@@ -6,9 +6,13 @@
 
 // Variables (that I'm using in main styles)
 // =========
-$fancy_font: 'proxima_novaregular', Palatino,"Palatino Linotype","Palatino LT STD","Book Antiqua",Georgia,serif;
-$cloister: 'cloister_blacklight', Palatino,"Palatino Linotype","Palatino LT STD","Book Antiqua",Georgia,serif;
-
+$fancy_font: 'proxima_novaregular', Palatino,'Palatino Linotype','Palatino LT STD','Book Antiqua',Georgia,serif;
+$cloister: 'cloister_blacklight', Palatino,'Palatino Linotype','Palatino LT STD','Book Antiqua',Georgia,serif;
+$gill_sans: 'Gill Sans' ,'Gill Sans MT',Calibri,sans-serif;
+$gt-1: #8CC647;
+$gt-2: #6D6F71;
+$highlight: #FFF5E4 !default;
+$shadow: #4C2E5A !default;
 /* *** ________                                    __                     
 *   /  _____/  ___________  _____ _____    _____/  |_  ______  _  ______  
 *  /   \  ____/ __ \_  __ \/     \\__  \  /    \   __\/  _ \ \/ \/ /    \ 
@@ -57,15 +61,27 @@ $cloister: 'cloister_blacklight', Palatino,"Palatino Linotype","Palatino LT STD"
 body {
     padding: 0;
     height: 100%;
-    font-family: $fancy_font;
 
 }
 
+//====== views/partials/nav.html
+//====== .header
+.header {
 
+}
 //====== Navbar
 .navbar-default {
     background: linear-gradient();
     border-radius: 0;
+    & a {
+        text-transform: uppercase;
+        letter-spacing: -0.02em;
+        font-family: $gill_sans;
+    }
+    & .navbar-brand {// Text: GTOrthodontics
+        font-family: $fancy_font;
+        font-weight: lighter;
+    }
 }
 
 // Index.html (one class which contains the ui-view)
@@ -121,8 +137,9 @@ $btn-cstm-border:              darken($btn-cstm-bg, 5%) !default;
 // Cool headers
 // ------------
 .cool-header {
-    font-family: $cloister;
+    font-family: 'Gill sans';
     font-size: 2.1em;
+    font-weight: 200;
 }
 
 

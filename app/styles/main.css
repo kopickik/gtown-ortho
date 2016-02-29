@@ -5244,6 +5244,15 @@ button.close {
 .centered {
   margin: 0 auto; }
 
+.align-right {
+  text-align: right; }
+
+.spacer {
+  height: 25rem;
+  width: 1px;
+  display: block;
+  float: none; }
+
 .navbar-default .navbar-nav > .open > a:hover,
 .navbar-default .navbar-nav > .open > a:focus {
   background-color: #f2f2f2; }

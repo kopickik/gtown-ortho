@@ -1,6 +1,7 @@
-@import "mixins"; // totally customized
-@import "bower_components/bourbon/app/assets/stylesheets/bourbon";
 @import "bootstrap-custom";
+@import "mixins"; // totally customized
+@import "util";
+@import "bower_components/bourbon/app/assets/stylesheets/bourbon";
 @import "icomoon";
 @import "type";
 @import "anim-in-out";

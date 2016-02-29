@@ -35,21 +35,6 @@ $shadow: #4C2E5A !default;
 * 3. more animations
 */
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 .browsehappy {
     margin: 0.2em 0;
     background: #ccc;
@@ -61,7 +46,6 @@ $shadow: #4C2E5A !default;
 body {
     padding: 0;
     height: 100%;
-
 }
 
 //====== views/partials/nav.html
@@ -71,12 +55,38 @@ body {
 }
 //====== Navbar
 .navbar-default {
-    background: linear-gradient();
+    -webkit-font-smoothing: antialiased;
+    //@include background(linear-gradient(top, rgba(125,126,125,1) 0%, rgba(14,14,14,0.9) 100%));
     border-radius: 0;
+    letter-spacing: -0.02em;
     & a {
-        text-transform: uppercase;
-        letter-spacing: -0.02em;
+
+    }//#js-navbar-collapse > ul > li.dropdown.open > ul > li:nth-child(1) > a
+    & .navbar-nav {
         font-family: $gill_sans;
+        font-size: 1.6rem;
+        font-weight: lighter;
+        & .caret {
+            @include transition(all 0.3s ease-out);
+            @include transform(rotate(-90deg));
+        }
+        & .dropdown {
+            & li {
+                font-size: 1.6rem;
+                font-weight: lighter;
+            }
+            & .active {
+                color: #f5f5f5;
+            }
+            &:hover .caret {
+                @include transform(rotate(0deg));
+            }
+        }
+        & .open, & .active {
+            .caret {
+                @include transform(rotate(0deg));
+            }
+        }
     }
     & .navbar-brand {// Text: GTOrthodontics
         font-family: $fancy_font;
@@ -87,8 +97,13 @@ body {
 // Index.html (one class which contains the ui-view)
 //==================================================
 .index-html {
-    
+    :after {
+        content: "";
+        display: block;
+    }
 }
+
+
 
 // Home.html
 // =========
@@ -98,19 +113,35 @@ body {
         padding: 1rem;
     }
 }
+aside:after {
+    content: "";
+    display: block;
+}
 
 
 // Footer
 // ======
-
+* {
+    margin: 0;
+}
+html, body {
+    height: 100%;
+}
+.wrapper {
+    min-height: 100%;
+    margin: 0 auto 9rem; /* the bottom margin is the negative value of the footer's height */
+}
+.footer-wrapper { width: 100%; height: 9rem;}
 .footer {
-    position: absolute;
-    bottom: 0;
-    .footer-content {
+    height: 9rem;
+    width: 100%;
+    background-color: #f5f5f5;
+    & .footer-content {
+        height: 9rem;// set to same height/width as parent
         padding: 1.2em;
         text-align: center;
     }
-    .icon-heart {
+    & .icon-heart {
         color: red;
         font-weight: 700;
         text-shadow: 0 2px 0 yellow, -2px 4px 0 green, 2px 4px 2px lime, -4px 8px 2px purple, 4px 8px 2px orange, -6px 12px 2px aqua, 6px 12px 2px brown;

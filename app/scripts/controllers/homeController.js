@@ -33,12 +33,11 @@ function HomeController($log, $rootScope, $scope, $state) {
         }).addClass(hoverClasses[_.random(6)]);
     };
 
-    // Balls.
-    $scope.getClash = function(xPos) {
-        vm.xPos = xPos;
-        console.log('Shippensburg', vm);
+    if ($state.current.name === 'home') {
+        angular.element('')
     }
-    $scope.getClash(angular.element(".home-content h1"));
+
+
 
 }
 

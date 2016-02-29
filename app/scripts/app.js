@@ -14,13 +14,15 @@
             templateUrl : './views/about/aboutTheOffice.html',
             data : { pageTitle : 'About the Office' },
             controller : 'aboutCtrl',
-            controllerAs : 'ctrl'
+            controllerAs : 'ctrl',
+            parentInfo: { 'about': 'parent__active' }
         }).state('about.meetTheDoc', { // About: Meet the Doctor
             url : '/meet-the-doctor',
             templateUrl : './views/about/meetTheDoc.html',
             data : { pageTitle : 'About the Office: Meet the Doctor' },
             controller : 'theDoctorCtrl',
-            controllerAs : 'ctrl'
+            controllerAs : 'ctrl',
+            parentInfo: { 'about': 'parent__active' }
         }).state('about.officeTour', { // About: Office Tour
             url : '/office-tour',
             templateUrl : './views/about/officeTour.html',
@@ -126,11 +128,11 @@
 
     gtoApp.run(['$rootScope', '$state', '$log',  function ($rootScope, $state, $log) {
         $rootScope.$state = $state;
-        // $rootScope.$on('$stateChangeStart', function(event, toState, toParams, fromState, fromParams) {
-        //     $rootScope.loading = true;
-        //     $rootScope.navOpen = false;
-        //     $log.debug('$stateChangeStart:', event, toState, toParams, fromState, fromParams);
-        // });
+        $rootScope.$on('$stateChangeStart', function(event, toState, toParams, fromState, fromParams) {
+            // $rootScope.loading = true;
+            // $rootScope.navOpen = false;
+            $log.debug('INFOS:', event, toState, toParams, fromState, fromParams);
+        });
 
         // $rootScope.$on('$stateChangeSuccess', function (event, toState, toParams, fromState, fromParams) {
         //     $rootScope.loading = false;

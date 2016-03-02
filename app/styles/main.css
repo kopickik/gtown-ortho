@@ -9663,9 +9663,13 @@ body {
     font-family: "proxima_novaregular", Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;
     font-weight: lighter; }
 
-.index-html :after {
-  content: "";
-  display: block; }
+.app-view-container {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column; }
+
+.index-html {
+  flex: 1 0 auto; }
 
 .home-content h1 {
   font-size: 4em;
@@ -9674,21 +9678,6 @@ body {
 aside:after {
   content: "";
   display: block; }
-
-* {
-  margin: 0; }
-
-html, body {
-  height: 100%; }
-
-.wrapper {
-  min-height: 100%;
-  margin: 0 auto 9rem;
-  /* the bottom margin is the negative value of the footer's height */ }
-
-.footer-wrapper {
-  width: 100%;
-  height: 9rem; }
 
 .footer {
   height: 9rem;

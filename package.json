@@ -3,14 +3,14 @@
   "description": "Website Project: GTO",
   "version": "0.0.1",
   "authors": "Kyle Kopicki & Scott Engemann",
-  "homepage": "https://github.com/sengemann/gtown-ortho",
+  "homepage": "https://github.com/sengemasa/gtown-ortho",
   "dependencies": {},
   "repository": {
     "type": "git",
-    "url": "git://github.com/sengemann/gtown-ortho.git"
+    "url": "git://github.com/sengemasa/gtown-ortho.git"
     },
     "bugs": {
-      "url": "https://github.com/sengemann/gtown-ortho/issues"
+      "url": "https://github.com/sengemasa/gtown-ortho/issues"
     },
   "devDependencies": {
     "compass": "^0.1.1",

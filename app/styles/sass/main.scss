@@ -94,8 +94,7 @@ body {
     }
 }
 
-// Index.html (one class which contains the ui-view)
-//==================================================
+//====== App-View-Container > Index.html (one class which contains the ui-view)
 .app-view-container {
     display: flex;
     min-height: 100vh;
@@ -106,8 +105,7 @@ body {
 }
 
 
-// Home.html
-// =========
+//====== Home.html
 .home-content{
     & h1 {
         font-size: 4em;
@@ -120,8 +118,7 @@ aside:after {
 }
 
 
-// Footer
-// ======
+//====== Footer
 
 .footer {
     height: 9rem;

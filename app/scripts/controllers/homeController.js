@@ -1,7 +1,7 @@
 'use strict';
 function HomeController($log, $rootScope, $scope, $state) {
     var vm = this;
-    $log.debug('Home Controller');
+    $log.debug('Home Controller', vm);
 
     var testes = [
         "Welcome to ",
@@ -33,9 +33,19 @@ function HomeController($log, $rootScope, $scope, $state) {
         }).addClass(hoverClasses[_.random(6)]);
     };
 
-    if ($state.current.name === 'home') {
-        angular.element('')
-    }
+// ** Let's do something useful *******
+// Stay in Angular?  hmm...
+
+
+
+
+
+
+
+
+
+
+
 
 
 

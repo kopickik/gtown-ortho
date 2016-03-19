@@ -127,12 +127,12 @@
     });
 
     gtoApp.run(['$rootScope', '$state', '$log',  function ($rootScope, $state, $log) {
-        $rootScope.$state = $state;
-        $rootScope.$on('$stateChangeStart', function(event, toState, toParams, fromState, fromParams) {
+        //$rootScope.$state = $state;
+        //$rootScope.$on('$stateChangeStart', function(event, toState, toParams, fromState, fromParams) {
             // $rootScope.loading = true;
             // $rootScope.navOpen = false;
-            $log.debug('INFOS:', event, toState, toParams, fromState, fromParams);
-        });
+            //$log.debug('INFOS:', event, toState, toParams, fromState, fromParams);
+        //});
 
         // $rootScope.$on('$stateChangeSuccess', function (event, toState, toParams, fromState, fromParams) {
         //     $rootScope.loading = false;

@@ -1,3 +1,4 @@
+@import 'mixins/variables';
 // Add some utility classes
 .center {
     text-align: center;
@@ -21,11 +22,11 @@
 // .navbar-default .navbar-nav > .open > a,
 .navbar-default .navbar-nav > .open > a:hover,
 .navbar-default .navbar-nav > .open > a:focus {
-    background-color: darken(#fcfcfc, 4%);
+    background-color: darken(#fcfcfc, 3%);
 }
 
 .navbar-default .navbar-nav > .active > a,
 .navbar-default .navbar-nav > .active > a:hover,
 .navbar-default .navbar-nav > .active > a:focus {
-    background-color: lighten(#c0e5d4, 5%);
+    background-color: lighten($gt-4, 5%);
 }

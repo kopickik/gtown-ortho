@@ -16,15 +16,8 @@
                 <li ui-sref-active="active">
                     <a href ui-sref="home">Home</a>
                 </li>
-                <li class="dropdown" ng-class="{active: ('about' | includedByState)}">
-                    <a href class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">About the Office <span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                        <li ui-sref-active="active"><a href ui-sref="about.meetTheDoc">Meet the Doctor</a></li>
-                        <li ui-sref-active="active"><a href ui-sref="about.officeTour">Office Tour</a></li>
-                    </ul>
-                </li>
                 <li class="dropdown" ng-class="{active: ('newPatients' | includedByState)}">
-                    <a href class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">New Patients <span class="caret"></span></a>
+                    <a href class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Patient Information <span class="caret"></span></a>
                     <ul class="dropdown-menu">
                         <li ui-sref-active="active"><a href ui-sref="newPatients.expectations">What to Expect</a></li>
                         <li ui-sref-active="active"><a href ui-sref="newPatients.paymentInsurance">Payment &amp; Insurance</a></li>
@@ -47,6 +40,13 @@
                         <li ui-sref-active="active"><a href ui-sref="difference.beforeAndAfter">Before &amp; After</a></li>
                         <li ui-sref-active="active"><a href ui-sref="difference.testimonials">Patient Testimonials</a></li>
                         <li ui-sref-active="active"><a href ui-sref="difference.setUsApart">What Sets Us Apart</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown" ng-class="{active: ('about' | includedByState)}">
+                    <a href class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">About the Office <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li ui-sref-active="active"><a href ui-sref="about.meetTheDoc">Meet the Doctor</a></li>
+                        <li ui-sref-active="active"><a href ui-sref="about.officeTour">Office Tour</a></li>
                     </ul>
                 </li>
                 <li ui-sref-active="active"><a href ui-sref="contact">Contact Us</a></li>

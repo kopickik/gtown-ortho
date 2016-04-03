@@ -26,7 +26,7 @@ function HomeController($log, $rootScope, $scope, $state) {
 
     $scope.addTestesClass = function() {
         //$log.log('addTestesClass fired.');
-        $scope.test = testes[_.random(5)];
+        $scope.test = testes[_.random(6)];
         angular.element(".home-content h1")
             .removeClass(function(index, classPattern) {
             return (classPattern.match(/(^|\s)hvr-\S+/g) || []).join(' ');

@@ -32,7 +32,7 @@
         }).state('newPatients', { // New Patients
             url : '/new-patients',
             templateUrl : './views/patients/newPatients.html',
-            data : { pageTitle : 'New Patients' },
+            data : { pageTitle : 'Patient Information' },
             controller : 'newPatientsCtrl',
             controllerAs : 'ctrl'
         }).state('newPatients.expectations', { // New Patients: What to Expect

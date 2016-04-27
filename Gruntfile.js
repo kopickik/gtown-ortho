@@ -21,7 +21,8 @@ module.exports = function (grunt) {
     // Configurable paths for the application
     var appConfig = {
         app: require('./bower.json').appPath || 'app',
-        dist: 'dist'
+        debug: 'debug',
+        dist: 'build',
     };
 
     // Define the configuration for all the tasks
@@ -53,8 +54,18 @@ module.exports = function (grunt) {
             }
         },
 
+        // Testing the ponyfoo way
+        tape: {
+            files: ['test/test/*.js']
+        },
+
         // Custom Sass task - offers ability to edit bootstrap defaults, import custom Sass, etc.
         sass: {
+            debug: {
+                files: {
+                    'build/styles/design.css': ['<%= yeoman.app %>/styles/sass/*.scss']
+                }
+            },
             dist: {
                 files: [{
                     expand: true,
@@ -63,7 +74,7 @@ module.exports = function (grunt) {
                     dest: '<%= yeoman.app %>/styles',
                     ext: '.css',
                     sourcemap: 'file'
-                    
+
                 }],
                 options: [{
                     loadPath: [
@@ -94,7 +105,7 @@ module.exports = function (grunt) {
             },
             styles: {
                 files: ['<%= yeoman.app %>/styles/{*,}/*.scss'],
-                tasks: ['sass','newer:copy:styles', 'autoprefixer']
+                tasks: ['sass:debug','newer:copy:styles', 'autoprefixer']
             },
             gruntfile: {
                 files: ['Gruntfile.js']
@@ -460,7 +471,6 @@ module.exports = function (grunt) {
             'clean:server',
             'includeSource:app',
             'wiredep',
-            'sass',
             'concurrent:server',
             'autoprefixer:server',
             'connect:livereload',
@@ -479,7 +489,8 @@ module.exports = function (grunt) {
         'concurrent:test',
         'autoprefixer',
         'connect:test',
-        'karma'
+        'karma', // removing karma tests in favor of tape?
+        'tape'
     ]);
 
 	grunt.registerTask('includSource:App', [

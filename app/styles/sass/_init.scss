@@ -3,14 +3,13 @@
 @import "util";
 @import "bower_components/bourbon/app/assets/stylesheets/bourbon";
 @import "icomoon";
-@import "type";
-@import "anim-in-out";
+@import "fonts-custom";
 
 // Custom component - Hero slider
 @import "cd-slider";
 @import "bower_components/animate.css/animate";
 
-/* 
+/*
 Examples of other init imports:
 @import "overrides";
 @import "bower_components/breakpoint-sass/stylesheets/breakpoint";

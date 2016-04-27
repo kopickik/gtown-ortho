@@ -1,4 +1,5 @@
 'use strict';
+
 function HomeController($log, $rootScope, $scope, $state) {
     var vm = this;
     $log.debug('Home Controller', vm);
@@ -35,11 +36,6 @@ function HomeController($log, $rootScope, $scope, $state) {
 
 // ** Let's do something useful *******
 // Stay in Angular?  hmm...
-
-
-
-
-
 
 
 

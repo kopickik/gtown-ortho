@@ -22,7 +22,7 @@ module.exports = function (grunt) {
     var appConfig = {
         app: require('./bower.json').appPath || 'app',
         debug: 'debug',
-        dist: 'build',
+        dist: 'dist',
     };
 
     // Define the configuration for all the tasks
@@ -63,7 +63,7 @@ module.exports = function (grunt) {
         sass: {
             debug: {
                 files: {
-                    'build/styles/design.css': ['<%= yeoman.app %>/styles/sass/*.scss']
+                    'dist/styles/design.css': ['<%= yeoman.app %>/styles/sass/*.scss']
                 }
             },
             dist: {

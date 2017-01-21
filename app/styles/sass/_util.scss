@@ -30,3 +30,7 @@
 .navbar-default .navbar-nav > .active > a:focus {
     background-color: lighten($gt-4, 5%);
 }
+
+img {
+  max-width: 100%;
+}

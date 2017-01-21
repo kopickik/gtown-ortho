@@ -1,12 +1,11 @@
 @import "bootstrap-custom";
-@import "mixins"; // totally customized
+@import "mixins";
 @import "util";
 @import "bower_components/bourbon/app/assets/stylesheets/bourbon";
 @import "icomoon";
 @import "fonts-custom";
 
 // Custom component - Hero slider
-@import "cd-slider";
 @import "bower_components/animate.css/animate";
 
 /*

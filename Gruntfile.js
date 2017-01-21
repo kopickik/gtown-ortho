@@ -62,9 +62,17 @@ module.exports = function (grunt) {
         // Custom Sass task - offers ability to edit bootstrap defaults, import custom Sass, etc.
         sass: {
             debug: {
-                files: {
-                    'dist/styles/design.css': ['<%= yeoman.app %>/styles/sass/*.scss']
-                }
+              options: {
+                style: 'expanded'
+              },
+              files: [{
+                expand: true,
+                cwd: '<%= yeoman.app %>/styles/sass',
+                src: ['*.scss'],
+                dest: '<%= yeoman.app %>/styles',
+                ext: '.css',
+                sourcemap: 'file'
+                }]
             },
             dist: {
                 files: [{

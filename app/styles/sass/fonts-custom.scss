@@ -24,11 +24,12 @@
     font-style: normal;
 
 }
-
+$proxima: 'proxima_novaregular', Palatino,'Palatino Linotype','Palatino LT STD','Book Antiqua',Georgia,serif;
+$cloister: 'cloister_blacklight', Palatino,'Palatino Linotype','Palatino LT STD','Book Antiqua',Georgia,serif;
 .proxima {
-  font-family: 'proxima_novaregular', Palatino,'Palatino Linotype','Palatino LT STD','Book Antiqua',Georgia,serif;
+  font-family: $proxima;
 }
 
 .cloister {
-  font-family: 'cloister_blacklight', Palatino,'Palatino Linotype','Palatino LT STD','Book Antiqua',Georgia,serif;
+  font-family: $cloister;
 }

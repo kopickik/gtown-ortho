@@ -2,10 +2,11 @@
 @import "bower_components/bourbon/app/assets/stylesheets/bourbon";
 
 // Include CSS from https://github.com/IanLunn/Hover.git - only the animations we want
-// 
+//
 @import "mixins/hover";
 @import "mixins/grid";
 @import "mixins/links";
+@import "mixins/anims";
 // Includes the following classes (all prefixed with .hvr-)
 // fade border-fade hollow trim ripple-out ripple-in outline-out outline-in round-corners
 // underline-from-left underline-from-center underline-from-right float-shadow

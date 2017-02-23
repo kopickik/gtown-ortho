@@ -7,57 +7,57 @@
         $stateProvider.state('home', { // Home
           url : '/home',
           templateUrl : './views/home.html',
-          data: { pageTitle : 'Welcome' },
+          data: { pageTitle : 'Welcome' , pageClass: 'home'},
           controller : 'homeCtrl',
           controllerAs : 'ctrl'
         }).state('about', { // About
           url : '/about-the-office',
           templateUrl : './views/about/aboutTheOffice.html',
-          data : { pageTitle : 'About the Office' },
+          data : { pageTitle : 'About the Office', pageClass: 'about' },
           controller : 'aboutCtrl',
           controllerAs : 'ctrl',
           parentInfo: { 'about': 'parent__active' }
         }).state('about.meetTheDoc', { // About: Meet the Doctor
           url : '/meet-the-doctor',
           templateUrl : './views/about/meetTheDoc.html',
-          data : { pageTitle : 'About the Office: Meet the Doctor' },
+          data : { pageTitle : 'About the Office: Meet the Doctor', pageClass: 'meet' },
           controller : 'theDoctorCtrl',
           controllerAs : 'ctrl',
           parentInfo: { 'about': 'parent__active' }
         }).state('about.officeTour', { // About: Office Tour
           url : '/office-tour',
           templateUrl : './views/about/officeTour.html',
-          data : { pageTitle : 'About the Office: Office Tour' },
+          data : { pageTitle : 'About the Office: Office Tour', pageClass: 'office-tour'},
           controller : 'officeTourCtrl',
           controllerAs : 'ctrl'
         }).state('newPatients', { // New Patients
           url : '/new-patients',
           templateUrl : './views/patients/newPatients.html',
-          data : { pageTitle : 'Patient Information' },
+          data : { pageTitle : 'Patient Information', pageClass: 'new-patients' },
           controller : 'newPatientsCtrl',
           controllerAs : 'ctrl'
         }).state('newPatients.expectations', { // New Patients: What to Expect
           url : '/expectations',
           templateUrl : './views/patients/expectations.html',
-          data : { pageTitle : 'New Patients: What to Expect' },
+          data : { pageTitle : 'New Patients: What to Expect', pageClass: 'what-to-expect' },
           controller : 'expectationsCtrl',
           controllerAs : 'ctrl'
         }).state('newPatients.paymentInsurance',  { // New Patients: Payments and Insurance
           url : '/payments-and-insurance',
           templateUrl : './views/patients/paymentsInsurance.html',
-          data : { pageTitle : 'New Patients: Payments and Insurance' },
+          data : { pageTitle : 'New Patients: Payments and Insurance', pageClass: 'payments-and-insurance' },
           controller : 'paymentsInsuranceCtrl',
           controllerAs : 'ctrl'
         }).state('newPatients.forms', { // New Patients: Forms
           url : '/forms',
           templateUrl : './views/patients/forms.html',
-          data : { pageTitle : 'New Patients: Forms' },
+          data : { pageTitle : 'New Patients: Forms', pageClass: 'forms' },
           controller : 'formsCtrl',
           controllerAs : 'ctrl'
         }).state('newPatients.referral', { // New Patients: Referral Program
           url : '/referral-program',
           templateUrl : './views/patients/referral.html',
-          data : { pageTitle : 'New Patients: Referral Program' },
+          data : { pageTitle : 'New Patients: Referral Program', pageClass: 'referrals' },
           controller : 'referralCtrl',
           controllerAs : 'ctrl'
         }).state('ortho', { // Orthodontics 101
@@ -128,7 +128,7 @@ gtoApp.config(function($logProvider) {
 });
 
 gtoApp.run(['$rootScope', '$state', '$log',  function ($rootScope, $state, $log) {
-        //$rootScope.$state = $state;
+        $rootScope.$state = $state;
         //$rootScope.$on('$stateChangeStart', function(event, toState, toParams, fromState, fromParams) {
             // $rootScope.loading = true;
             // $rootScope.navOpen = false;

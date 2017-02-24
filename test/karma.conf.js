@@ -1,10 +1,16 @@
+var pkg = require('../package.json');
+// var testConfig = require('../configuration/test-config');
+
 module.exports = function(config) {
   config.set({
-    basePath: '',
+    basePath: '../',
     plugins: ['karma-jasmine', 'karma-phantomjs-launcher'],
     frameworks: ['jasmine'],
     files: [
-      'spec/nonexistent.js'
+      'bower_components/angular/angular.js',
+      'bower_components/angular-mocks/angular-mocks.js',
+      'app/**/*.js',
+      'test/**/*.js'
     ],
     exclude: [
     ],

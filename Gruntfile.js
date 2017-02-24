@@ -496,8 +496,8 @@ module.exports = function (grunt) {
         'concurrent:test',
         'autoprefixer',
         'connect:test',
-        'karma', // removing karma tests in favor of tape?
-        'tape'
+        'karma' // removing karma tests in favor of tape?
+        // 'tape'
     ]);
 
 	grunt.registerTask('includSource:App', [

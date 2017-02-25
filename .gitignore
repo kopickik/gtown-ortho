@@ -1,7 +1,8 @@
 bower_components
 dist
+build
 node_modules
-test
 .tmp
 .idea
 .DS_Store
+.editorconfig

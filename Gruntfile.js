@@ -21,7 +21,8 @@ module.exports = function (grunt) {
     // Configurable paths for the application
     var appConfig = {
         app: require('./bower.json').appPath || 'app',
-        dist: 'dist'
+        debug: 'debug',
+        dist: 'dist',
     };
 
     // Define the configuration for all the tasks
@@ -53,16 +54,33 @@ module.exports = function (grunt) {
             }
         },
 
+        // Testing the ponyfoo way
+        tape: {
+            files: ['test/test/*.js']
+        },
+
         // Custom Sass task - offers ability to edit bootstrap defaults, import custom Sass, etc.
         sass: {
+            debug: {
+              files: [{
+                expand: false,
+                cwd: '<%= yeoman.app %>/styles/sass',
+                src: ['main.scss'],
+                dest: '<%= yeoman.app %>/styles',
+                ext: '.css',
+                lineNumbers: true
+              }]
+            },
             dist: {
                 files: [{
                     expand: true,
                     cwd: '<%= yeoman.app %>/styles/sass',
                     src: ['*.scss'],
                     dest: '<%= yeoman.app %>/styles',
-                    ext: '.css'
-                    
+                    ext: '.css',
+                    sourcemap: false,
+                    lineNumbers: false
+
                 }],
                 options: [{
                     loadPath: [
@@ -93,7 +111,7 @@ module.exports = function (grunt) {
             },
             styles: {
                 files: ['<%= yeoman.app %>/styles/{*,}/*.scss'],
-                tasks: ['sass','newer:copy:styles', 'autoprefixer']
+                tasks: ['sass:debug','newer:copy:styles', 'autoprefixer']
             },
             gruntfile: {
                 files: ['Gruntfile.js']
@@ -174,7 +192,8 @@ module.exports = function (grunt) {
         jshint: {
             options: {
                 jshintrc: '.jshintrc',
-                reporter: require('jshint-stylish')
+                reporter: require('jshint-stylish'),
+                force: true
             },
             all: {
                 src: [
@@ -335,7 +354,7 @@ module.exports = function (grunt) {
                 files: [{
                     expand: true,
                     cwd: '<%= yeoman.app %>/images',
-                    src: '{,*/}*.{png,jpg,jpeg,gif}',
+                    src: '[{,*/}*.{png,jpg,jpeg,gif}]',
                     dest: '<%= yeoman.dist %>/images'
                 }]
             }
@@ -459,7 +478,6 @@ module.exports = function (grunt) {
             'clean:server',
             'includeSource:app',
             'wiredep',
-            'sass',
             'concurrent:server',
             'autoprefixer:server',
             'connect:livereload',
@@ -478,7 +496,8 @@ module.exports = function (grunt) {
         'concurrent:test',
         'autoprefixer',
         'connect:test',
-        'karma'
+        'karma' // removing karma tests in favor of tape?
+        // 'tape'
     ]);
 
 	grunt.registerTask('includSource:App', [

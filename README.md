@@ -1,4 +1,4 @@
-# Georgetown Orthodonitics
+# Germantown Orthodontics [![Build Status](https://travis-ci.org/kopickik/gtown-ortho.svg?branch=master)](https://travis-ci.org/kopickik/gtown-ortho)
 
 This project is generated with [yo angular generator](https://github.com/yeoman/generator-angular)
 version 0.11.1.

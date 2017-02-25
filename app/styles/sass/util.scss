@@ -1,0 +1,36 @@
+@import 'mixins/variables';
+// Add some utility classes
+.center {
+    text-align: center;
+}
+
+.centered {
+    margin: 0 auto;
+}
+
+.align-right {
+    text-align: right;
+}
+
+.spacer {
+    height: 24rem;
+    width: 1px;
+    display: block;
+    float: none;
+}
+
+// .navbar-default .navbar-nav > .open > a,
+.navbar-default .navbar-nav > .open > a:hover,
+.navbar-default .navbar-nav > .open > a:focus {
+    background-color: darken(#fcfcfc, 3%);
+}
+
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus {
+    background-color: lighten($gt-4, 5%);
+}
+
+img {
+  max-width: 100%;
+}

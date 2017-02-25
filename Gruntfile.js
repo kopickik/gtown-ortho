@@ -63,7 +63,7 @@ module.exports = function (grunt) {
         sass: {
             debug: {
               files: [{
-                expand: true,
+                expand: false,
                 cwd: '<%= yeoman.app %>/styles/sass',
                 src: ['main.scss'],
                 dest: '<%= yeoman.app %>/styles',
@@ -78,8 +78,8 @@ module.exports = function (grunt) {
                     src: ['*.scss'],
                     dest: '<%= yeoman.app %>/styles',
                     ext: '.css',
-                    sourcemap: 'auto',
-                    lineNumbers: true
+                    sourcemap: false,
+                    lineNumbers: false
 
                 }],
                 options: [{

@@ -6,4 +6,5 @@ node_modules
 .idea
 .DS_Store
 .editorconfig
-app/styles/main.css
+app/**/*.css
+

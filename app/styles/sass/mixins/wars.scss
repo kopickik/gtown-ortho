@@ -1,4 +1,7 @@
-.wrapper {
+@import 'anims';
+
+.pate &
+  .wrapper {
   width: 100%;
   float: left;
   margin-bottom: 4em;
@@ -170,20 +173,6 @@
 .hvr-glimmer .t-20,
 .hvr-glimmer .t-25,
 .hvr-glimmer .t-30 {animation: glimmer 3.5s;}
-
-
-@keyframes glimmer {
-  0% {opacity: 1;}
-  25% {opacity: 0.7;}
-  50% {opacity: 1;}
-  75% {opacity: 0.75;}
-  100% {opacity: 1;}
-}
-
-
-
-
-
 
 /* Shadowtrooper */
 

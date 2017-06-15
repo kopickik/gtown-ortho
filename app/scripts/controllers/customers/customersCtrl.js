@@ -13,7 +13,10 @@
   }
 
   function customersViewCtrl($scope, $stateParams, Customer) {
-    $scope.customer = Customer.query({ id: $stateParams.id });
+    var customers = Customer.query({ id: $stateParams.id }, function () {
+      var customer = customers[0];
+      $scope.customer = customer;
+    });
   }
 
   function customersCreateCtrl($scope, $state, $stateParams, Customer) {
@@ -28,6 +31,11 @@
   }
 
   function customersEditCtrl($scope, $state, $stateParams, Customer) {
+    var customers = Customer.query({ id: $stateParams.id }, function () {
+      var customer = customers[0];
+      $scope.customer = customer;
+    });
+
     $scope.updateCustomer = function () {
       $scope.customer.$update(function () {
         $state.go('customers');

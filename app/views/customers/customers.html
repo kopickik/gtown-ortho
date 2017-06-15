@@ -9,6 +9,7 @@
     <td>{{customer.firstName + ' ' + customer.lastName}}</td>
     <td>
       <a class="btn btn-primary" ui-sref="viewCustomer({id:customer._id})">View</a>
+      <a class="btn btn-warning" ui-sref="editCustomer({id:customer._id})">Edit</a>
       <a class="btn btn-danger" ng-click="deleteCustomer(customer)">Delete</a>
     </td>
   </tr>

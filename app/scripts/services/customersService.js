@@ -5,7 +5,12 @@
     return $resource('http://localhost:8080/api/customers/:id', {
       id: '@_id'
     }, {
-        update: {
+        'get': {
+          method: 'GET',
+          isArray: false
+        }
+      }, {
+        'update': {
           method: 'PUT'
         }
       });
@@ -17,5 +22,5 @@
     }
   }
   angular.module('gtoApp').factory('Customer', CustomersService)
-  .service('popupService', PopupService);
+    .service('popupService', PopupService);
 })()

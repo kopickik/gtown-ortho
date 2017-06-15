@@ -1,7 +1,16 @@
 {
   "name": "gto",
   "version": "0.0.0",
-  "dependencies": {},
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "cookie-parser": "^1.4.3",
+    "express": "^4.15.3",
+    "grunt-nodemon": "^0.4.2",
+    "mongoose": "^4.10.6",
+    "mongoose-type-email": "^1.0.5",
+    "morgan": "^1.8.2",
+    "serve-favicon": "^2.4.3"
+  },
   "repository": {},
   "devDependencies": {
     "grunt": "^0.4.5",

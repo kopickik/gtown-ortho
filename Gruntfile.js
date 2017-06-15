@@ -46,9 +46,9 @@ module.exports = function (grunt) {
                     '<%= yeoman.dist %>/index.html': '<%= yeoman.app %>/index.html'
                 }
             },
-            app : {
-                files : {
-                    '<%= yeoman.app %>/index.html' : '<%= yeoman.app %>/index.html'
+            app: {
+                files: {
+                    '<%= yeoman.app %>/index.html': '<%= yeoman.app %>/index.html'
                 }
             }
         },
@@ -59,10 +59,16 @@ module.exports = function (grunt) {
                 ignorePath: 'app',
                 addRootSlash: false
             },
-            local_dependencies: {
+            localDependencies: {
                 files: {
-                    '<%= yeoman.app %>/index.html' : ['<%= yeoman.app %>/scripts/**/*.js']
+                    '<%= yeoman.app %>/index.html': ['<%= yeoman.app %>/scripts/**/*.js']
                 }
+            }
+        },
+
+        nodemon: {
+            dev: {
+                script: 'server.js'
             }
         },
 
@@ -113,7 +119,7 @@ module.exports = function (grunt) {
                 port: 9000,
                 // Change this to '0.0.0.0' to access the server from outside.
                 hostname: 'localhost',
-                livereload: 35729
+                livereload: 35730
             },
             includeSource: {
                 files: ['<%= yeoman.app %>/index.html'],
@@ -126,12 +132,12 @@ module.exports = function (grunt) {
                         return [
                             connect.static('.tmp'),
                             connect().use(
-                                    '/bower_components',
-                                    connect.static('./bower_components')
+                                '/bower_components',
+                                connect.static('./bower_components')
                             ),
                             connect().use(
-                                    '/app/styles',
-                                    connect.static('./app/styles')
+                                '/app/styles',
+                                connect.static('./app/styles')
                             ),
                             connect.static(appConfig.app)
                         ];
@@ -146,8 +152,8 @@ module.exports = function (grunt) {
                             connect.static('.tmp'),
                             connect.static('test'),
                             connect().use(
-                                    '/bower_components',
-                                    connect.static('./bower_components')
+                                '/bower_components',
+                                connect.static('./bower_components')
                             ),
                             connect.static(appConfig.app)
                         ];
@@ -227,15 +233,15 @@ module.exports = function (grunt) {
         wiredep: {
             app: {
                 src: [
-					'<%= yeoman.app %>/index.html'
-				],
-                ignorePath:  /\.\.\//
+                    '<%= yeoman.app %>/index.html'
+                ],
+                ignorePath: /\.\.\//
             },
             test: {
                 devDependencies: true,
                 src: '<%= karma.unit.configFile %>',
-                ignorePath:  /\.\.\//,
-                fileTypes:{
+                ignorePath: /\.\.\//,
+                fileTypes: {
                     js: {
                         block: /(([\s\t]*)\/{2}\s*?bower:\s*?(\S*))(\n|\r|.)*?(\/{2}\s*endbower)/gi,
                         detect: {
@@ -418,7 +424,7 @@ module.exports = function (grunt) {
         // Run some tasks in parallel to speed up the build process
         concurrent: {
             server: [
-                'copy:styles'
+                'copy:styles',
             ],
             test: [
                 'copy:styles'
@@ -448,9 +454,11 @@ module.exports = function (grunt) {
             'clean:server',
             'includeSource:app',
             'wiredep',
+            'injector',
             'concurrent:server',
             'autoprefixer:server',
             'connect:livereload',
+            'nodemon',
             'watch'
         ]);
     });
@@ -469,9 +477,9 @@ module.exports = function (grunt) {
         'karma'
     ]);
 
-	grunt.registerTask('includeSource:App', [
-		'includeSource:app'
-	]);
+    grunt.registerTask('includeSource:App', [
+        'includeSource:app'
+    ]);
 
     grunt.registerTask('build', [
         'clean:dist',

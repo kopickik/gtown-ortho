@@ -1,9 +1,11 @@
 (function() {
     'use strict';
-    function aboutController($log) {
+    function AboutController($log) {
         var vm = this;
         $log.debug('About Controller');
+
+        vm.something = 'something';
     }
 
-    angular.module('gtoApp').controller('aboutCtrl', aboutController);
+    angular.module('gtoApp').controller('aboutCtrl', AboutController);
 })();

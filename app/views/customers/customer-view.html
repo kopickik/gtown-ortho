@@ -1,0 +1,25 @@
+<table class="table customertable">
+  <tr>
+    <td><h3>Details for {{customer.firstName}}</h3></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Name</td>
+    <td>{{customer.firstName + ' ' + customer.lastName}}</td>
+  </tr>
+  <tr>
+    <td>Email</td>
+    <td>{{customer.email}}</td>
+  </tr>
+  <tr>
+    <td>Address</td>
+    <td>{{customer.streetAddress}}</td>
+  </tr>
+  <tr>
+    <td>Phone</td>
+    <td>{{customer.phoneNumber}}</td>
+  </tr>
+</table>
+<div>
+  <a class="btn btn-primary" ui-sref="editCustomer({id:customer._id})">Edit</a>
+</div>

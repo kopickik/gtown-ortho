@@ -53,6 +53,19 @@ module.exports = function (grunt) {
             }
         },
 
+        injector: {
+            options: {
+                template: '<%= yeoman.app %>/index.html',
+                ignorePath: 'app',
+                addRootSlash: false
+            },
+            local_dependencies: {
+                files: {
+                    '<%= yeoman.app %>/index.html' : ['<%= yeoman.app %>/scripts/**/*.js']
+                }
+            }
+        },
+
         // Watches files for changes and runs tasks based on the changed files
         watch: {
             bower: {
@@ -412,7 +425,7 @@ module.exports = function (grunt) {
             ],
             dist: [
                 'copy:styles',
-                'imagemin',
+                // 'imagemin',
                 'svgmin'
             ]
         },
@@ -456,7 +469,7 @@ module.exports = function (grunt) {
         'karma'
     ]);
 
-	grunt.registerTask('includSource:App', [
+	grunt.registerTask('includeSource:App', [
 		'includeSource:app'
 	]);
 

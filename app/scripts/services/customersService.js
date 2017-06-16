@@ -2,6 +2,10 @@
   'use strict';
 
   function CustomersService($resource) {
+    function resourceErrorHandler(resp) {
+      console.debug(resp);
+      throw new Error('Houston, we have a problem.')
+    }
     return $resource('http://localhost:8080/api/customers/:id', {
       id: '@_id'
     }, {

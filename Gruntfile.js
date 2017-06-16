@@ -61,7 +61,9 @@ module.exports = function (grunt) {
             },
             localDependencies: {
                 files: {
-                    '<%= yeoman.app %>/index.html': ['<%= yeoman.app %>/scripts/**/*.js']
+                    '<%= yeoman.app %>/index.html': [
+                        '<%= yeoman.app %>/scripts/**/*.js',
+                        '<%= yeoman.app %>/bower_components/font-awesome/css/font-awesome.min.css']
                 }
             }
         },
@@ -109,7 +111,7 @@ module.exports = function (grunt) {
             },
             styles: {
                 files: ['<%= yeoman.app %>/styles/sass/main.scss'],
-                tasks: ['sass:dist', 'newer:copy:styles', 'autoprefixer']
+                tasks: ['sass', 'newer:copy:styles', 'autoprefixer']
             },
             gruntfile: {
                 files: ['Gruntfile.js']
@@ -505,6 +507,7 @@ module.exports = function (grunt) {
         'includeSource:dist',
         'useminPrepare',
         'concurrent:dist',
+        'sass',
         'autoprefixer',
         'concat',
         'ngAnnotate',

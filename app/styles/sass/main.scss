@@ -7,6 +7,19 @@ html {
   font-size: 10px;
 }
 
+html, body {
+    height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  background-color: #111;
+  color: #fafafa;
+  font-size: 1.5rem;
+  font-family: Georgia, Times, "Times New Roman", serif;
+}
+
 a {
     -webkit-transition: all .2s ease-in-out;
     -moz-transition: all .2s ease-in-out;
@@ -141,19 +154,25 @@ a {
         background: rgba(white, 0.1);
     }
     i.animated {
+        transition-property: transform;
         -webkit-transition-property: -webkit-transform;
+        transition-duration: 1s;
         -webkit-transition-duration: 1s;
         -moz-transition-property: -moz-transform;
         -moz-transition-duration: 1s;
     }
     &:hover {
         i.animated {
+            animation-name: pulse;
             -webkit-animation-name: pulse;
             -moz-animation-name: pulse;
+            animation-duration: 1.5s;
             -webkit-animation-duration: 1.5s;
             -moz-animation-duration: 1.5s;
+            animation-iteration-count: infinite;
             -webkit-animation-iteration-count: infinite;
             -moz-animation-iteration-count: infinite;
+            animation-timing-function: linear;
             -webkit-animation-timing-function: linear;
             -moz-animation-timing-function: linear;
         }
@@ -211,21 +230,6 @@ a {
     }
 }
 
-@media(min-width:767px) {
-    .content-section {
-        padding-top: 250px;
-    }
-
-    .download-section {
-        padding: 100px 0;
-    }
-
-    #map {
-        height: 400px;
-        margin-top: 250px;
-    }
-}
-
 .btn {
     text-transform: uppercase;
     font-family: "Anonymous Pro for Powerline", "Menlo", "Monaco", "Courier New", monospace;
@@ -266,19 +270,8 @@ ul.banner-social-buttons {
     }
 }
 
-.body {
-  background-color: #111;
-  color: #fafafa;
-  font-size: 1.5rem;
-  font-family: Georgia, Times, "Times New Roman", serif;
-}
-
 .content-container {
-  min-height: calc(100vh - 8em);
-}
-
-.footer {
-  height: 7em;
+  flex: 1 0 auto;
 }
 
 .table-hover {
@@ -294,5 +287,25 @@ ul.banner-social-buttons {
         td {
             font-family: "Anonymous Pro for Powerline", "Menlo", "Monaco", "Courier New", monospace;
         }
+    }
+}
+
+.full-details {
+    font-size: 1rem;
+    font-family: Arial, sans-serif;
+    color: lime;
+}
+
+.footer {
+    height: 2em;
+    padding-top: 200px;
+    margin: 0;
+}
+.mille {
+    font-size: 1rem;
+    color: cyan;
+    transition: text-shadow in-out 1s;
+    &:hover {
+        text-shadow: 1px 2px 0 rgba(255,255,255, 0.1)
     }
 }

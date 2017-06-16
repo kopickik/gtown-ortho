@@ -51,6 +51,7 @@ router.route('/customers')
   .post(function (req, res, next) {
 
     var customer = new Customer()
+
     customer.firstName = req.body.firstName
     customer.lastName = req.body.lastName
     customer.email = req.body.email
@@ -58,8 +59,10 @@ router.route('/customers')
     customer.phoneNumber = req.body.phoneNumber
 
     customer.save(function (err) {
-      if (err) { return res.send(err) }
-      res.json({ message: 'Customer created!' })
+      if (err) { return res.status(400).json({
+          messages: err.message
+      }) }
+      return res.send({ successMessage: 'Customer created!' })
     })
   })
   .get(function (req, res) {
@@ -80,10 +83,11 @@ router.route('/customers/:customer_id')
       res.json(customer)
     })
   })
-  .put(function (req, res) {
+  .put(function (req, res, next) {
       Customer.findById(req.params.customer_id, function (err, customer) {
       if (err) {
-        return res.send(err);
+        
+        return res.status(400).send(err);
       }
       customer.firstName = req.body.firstName
       customer.lastName = req.body.lastName
@@ -94,7 +98,9 @@ router.route('/customers/:customer_id')
       // save the customer
       customer.save(function (err) {
         if (err) {
-          return res.send(err);
+          return res.status(400).send({
+            updateError: err.message
+          })
         }
         res.json({ message: 'Customer updated!' });
       })

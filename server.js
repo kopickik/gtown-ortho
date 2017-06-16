@@ -58,14 +58,14 @@ router.route('/customers')
     customer.phoneNumber = req.body.phoneNumber
 
     customer.save(function (err) {
-      if (err) { res.send(err) }
+      if (err) { return res.send(err) }
       res.json({ message: 'Customer created!' })
     })
   })
   .get(function (req, res) {
     Customer.find(function (err, customers) {
       if (err) {
-        res.send(err)
+        return res.send(err)
       }
       res.json(customers)
     })
@@ -73,17 +73,17 @@ router.route('/customers')
 
 router.route('/customers/:customer_id')
   .get(function (req, res) {
-    Customer.find({
+    Customer.findOne({
       _id: req.params.customer_id
     }, function (err, customer) {
-      if (err) { res.send(err) }
+      if (err) { return res.send(err) }
       res.json(customer)
     })
   })
   .put(function (req, res) {
       Customer.findById(req.params.customer_id, function (err, customer) {
       if (err) {
-        res.send(err);
+        return res.send(err);
       }
       customer.firstName = req.body.firstName
       customer.lastName = req.body.lastName
@@ -94,7 +94,7 @@ router.route('/customers/:customer_id')
       // save the customer
       customer.save(function (err) {
         if (err) {
-          res.send(err);
+          return res.send(err);
         }
         res.json({ message: 'Customer updated!' });
       })
@@ -106,7 +106,7 @@ router.route('/customers/:customer_id')
     _id: req.params.customer_id
   }, function (err, customer) {
     if (err) {
-      res.send(err)
+      return res.send(err)
     }
     res.json({ message: 'Customer deleted.' })
   })
@@ -117,7 +117,7 @@ router.route('/customers/:customer_id/view')
     Customer.findOne({
       _id: req.params.customer_id
     }, function (err, customer) {
-      if (err) { res.send(err) }
+      if (err) { return res.send(err) }
       res.send(customer)
     })
   })
@@ -127,7 +127,7 @@ router.route('/customers/:customer_id/edit')
     Customer.findOne({
       _id: req.params.customer_id
     }, function (err, customer) {
-      if (err) { res.send(err) }
+      if (err) { return res.send(err) }
       res.send(customer)
     })
   })

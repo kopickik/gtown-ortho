@@ -1,6 +1,7 @@
-<a ui-sref="newCustomer" class="btn-primary btn-lg nodecoration">Add New Customer</a>
-
-<table class="table customertable">
+<div id="formMessages" ng-show="formMessage">{{ formMessage }}</div>
+<a ui-sref="createCustomer" class="btn btn-primary btn-lg">Add New Customer</a>
+<hr>
+<table class="table table-bordered table-hover customers-table">
   <tr>
     <td><h3>All Customers</h3></td>
     <td></td>

@@ -72,6 +72,24 @@ module.exports = function (grunt) {
             }
         },
 
+        sass: {
+            dist: {
+                files: [{
+                    expand: true,
+                    cwd: '<%= yeoman.app %>/styles/sass',
+                    src: ['main.scss'],
+                    dest: '<%= yeoman.app %>/styles',
+                    ext: '.css'
+                }],
+                options: [{
+                    loadPath: [
+                        // Add bower_components ruby gems components here.
+                        // For example: 'bower_components/bourbon/dist'
+                    ]
+                }]
+            }
+        },
+
         // Watches files for changes and runs tasks based on the changed files
         watch: {
             bower: {
@@ -90,8 +108,8 @@ module.exports = function (grunt) {
                 tasks: ['newer:jshint:test', 'karma']
             },
             styles: {
-                files: ['<%= yeoman.app %>/styles/*/*.css'],
-                tasks: ['newer:copy:styles', 'autoprefixer']
+                files: ['<%= yeoman.app %>/styles/sass/main.scss'],
+                tasks: ['sass:dist', 'newer:copy:styles', 'autoprefixer']
             },
             gruntfile: {
                 files: ['Gruntfile.js']

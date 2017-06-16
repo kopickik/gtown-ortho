@@ -31,22 +31,25 @@
   }
 
   function customersEditCtrl($scope, $state, $stateParams, Customer) {
-    var customers = Customer.query({ id: $stateParams.id }, function () {
-      var customer = customers[0];
-      $scope.customer = customer;
-    });
 
-    $scope.updateCustomer = function () {
-      $scope.customer.$update(function () {
+    $scope.loadCustomer = function() {
+      Customer.get({id: $stateParams.id})
+      .$promise.then(function(customer) {
+        $scope.customer = customer
+      })
+    }
+    // var customers = Customer.query({ id: $stateParams.id }, function () {
+    //   var customer = customers[0];
+    //   $scope.customer = customer;
+    // });
+
+    $scope.loadCustomer();
+
+    $scope.updateCustomer = function (customer) {
+      Customer.$update(customer, function () {
         $state.go('customers');
       });
     };
-
-    $scope.loadCustomer = function () {
-      $scope.customer = Customer.query({ id: $stateParams.id });
-    };
-
-    $scope.loadCustomer();
   }
 
   angular.module('gtoApp').controller('customersCreateCtrl', customersCreateCtrl);

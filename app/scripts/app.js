@@ -9,12 +9,6 @@
             data: { pageTitle: 'Welcome' },
             controller: 'homeCtrl',
             controllerAs: 'ctrl'
-        }).state('about', { // About
-            url: '/about-the-office',
-            templateUrl: './views/about/about.html',
-            data: { pageTitle: 'About' },
-            controller: 'aboutCtrl',
-            controllerAs: 'ctrl'
         }).state('contact', { // Contact Us
             url: '/contact-us',
             templateUrl: './views/contact.html',

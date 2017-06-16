@@ -10,6 +10,10 @@
           isArray: false
         }
       }, {
+        'save': {
+          method: 'POST'
+        }
+      }, {
         'update': {
           method: 'PUT'
         }

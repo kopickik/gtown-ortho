@@ -5,20 +5,9 @@
     return $resource('http://localhost:8080/api/customers/:id', {
       id: '@_id'
     }, {
-        'get': {
-          method: 'GET',
-          isArray: false
-        }
-      }, {
-        'save': {
-          method: 'POST'
-        }
-      }, {
-        'update': {
-          method: 'PUT'
-        }
-      });
-  }
+        'update': { method: 'PUT' }
+    }
+  )};
 
   function PopupService($window) {
     this.showPopup = function (msg) {

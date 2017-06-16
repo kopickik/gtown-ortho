@@ -45,11 +45,11 @@
 
     $scope.loadCustomer();
 
-    $scope.updateCustomer = function (customer) {
-      Customer.$update(customer, function () {
-        $state.go('customers');
-      });
-    };
+    $scope.updateCustomer = function () {
+      $scope.customer.$update(function () {
+        $state.go('customers')
+      })
+    }
   }
 
   angular.module('gtoApp').controller('customersCreateCtrl', customersCreateCtrl);

@@ -117,6 +117,17 @@ a {
     -webkit-animation-timing-function: linear;
     -moz-animation-timing-function: linear; }
 
+@keyframes pulse {
+  from {
+    -webkit-transform: scale(1);
+    transform: scale(1); }
+  50% {
+    -webkit-transform: scale(1.2);
+    transform: scale(1.2); }
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1); } }
+
 @-webkit-keyframes pulse {
   from {
     -webkit-transform: scale(1);
@@ -213,3 +224,6 @@ body {
 
 .table-hover tbody tr:hover {
   background-color: #373737; }
+
+.customers-table tr td {
+  font-family: "Anonymous Pro for Powerline", "Menlo", "Monaco", "Courier New", monospace; }

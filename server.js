@@ -132,10 +132,6 @@ router.route('/customers/:customer_id/edit')
     })
   })
 
-router.get('/', function (req, res, next) {
-  res.json({ message: 'Hooray. API is up.' })
-})
-
 app.use('/api', router)
 
 app.listen(port)

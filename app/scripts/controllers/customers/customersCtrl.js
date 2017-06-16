@@ -10,13 +10,20 @@
         });
       }
     };
+    $scope.deleteAllCustomers = function () {
+      if (popupService.showPopup('Really delete ALL Customers? There is no magic seed button..')) {
+        // customers.$delete(function () {
+        //   $window.location.href = '';
+        // });
+      }
+    };
   }
 
   function customersViewCtrl($scope, $stateParams, Customer) {
-    var customers = Customer.query({ id: $stateParams.id }, function () {
-      var customer = customers[0];
-      $scope.customer = customer;
-    });
+    Customer.get({ id: $stateParams.id })
+      .$promise.then(function (customer) {
+        $scope.customer = customer
+      })
   }
 
   function customersCreateCtrl($scope, $state, $stateParams, Customer) {
@@ -25,6 +32,8 @@
     $scope.addCustomer = function () {
       $scope.customer.$save(function () {
         $state.go('customers');
+      }, function () {
+        $scope.formMessage = 'Problem saving new customer.'
       });
     };
 
@@ -32,11 +41,11 @@
 
   function customersEditCtrl($scope, $state, $stateParams, Customer) {
 
-    $scope.loadCustomer = function() {
-      Customer.get({id: $stateParams.id})
-      .$promise.then(function(customer) {
-        $scope.customer = customer
-      })
+    $scope.loadCustomer = function () {
+      Customer.get({ id: $stateParams.id })
+        .$promise.then(function (customer) {
+          $scope.customer = customer
+        })
     }
     // var customers = Customer.query({ id: $stateParams.id }, function () {
     //   var customer = customers[0];
@@ -51,6 +60,7 @@
       })
     }
   }
+
 
   angular.module('gtoApp').controller('customersCreateCtrl', customersCreateCtrl);
   angular.module('gtoApp').controller('customersListCtrl', customersListCtrl);

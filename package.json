@@ -1,16 +1,25 @@
 {
-  "name": "gto",
-  "version": "0.0.0",
+  "name": "dgm",
+  "version": "0.0.1",
   "dependencies": {
     "body-parser": "^1.17.2",
+    "contra": "^1.9.4",
     "cookie-parser": "^1.4.3",
     "express": "^4.15.3",
     "grunt-nodemon": "^0.4.2",
+    "http": "0.0.0",
+    "lipstick": "^1.1.0",
+    "moment": "^2.18.1",
     "mongoose": "^4.10.6",
     "mongoose-type-email": "^1.0.5",
     "morgan": "^1.8.2",
+    "os": "^0.1.1",
     "serve-favicon": "^2.4.3",
-    "underscore": "^1.8.3"
+    "sluggish": "^1.0.1",
+    "underscore": "^1.8.3",
+    "util": "^0.10.3",
+    "validator": "^7.0.0",
+    "winston": "^2.3.1"
   },
   "repository": {},
   "devDependencies": {

@@ -4,7 +4,7 @@
     $scope.customers = Customer.query();
     var errorListener = $rootScope.$on('error:saveError', function (event, data) {
       $scope.errors = true;
-      $scope.errorMessage = data;
+      $scope.errorMessage = data.data.messages;
     });
 
     $scope.deleteCustomer = function (customer) {
@@ -19,6 +19,7 @@
   }
 
   function customersViewCtrl($scope, $stateParams, Customer, Errors) {
+    $scope.$on('error:resource', function() { console.log('Oh yeah, we got an error.')})
     Customer.get({ id: $stateParams.id })
       .$promise.then(function (customer) {
         $scope.customer = customer
@@ -31,12 +32,13 @@
     $scope.customer = new Customer();
 
     $scope.addCustomer = function () {
-      $scope.customer.$save(function (err) {
-        if (err) {
-          $rootScope.$emit('error:saveError', err)
-        }
-        $state.go('customers');
+      $scope.customer.$save(function (resp) {
+        // success callback
+        $state.go('customers', resp)
       }, function (resp) {
+         $scope.statusMessage = resp.statusText;
+         $scope.status = resp.status;
+         $scope.errorMessage = resp.data.messages;
       });
     };
 

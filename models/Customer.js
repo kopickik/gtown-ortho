@@ -1,10 +1,13 @@
 'use strict'
 
-var mongoose = require('mongoose')
-var Schema = mongoose.Schema
+const mongoose = require('mongoose')
+const ObjectId = mongoose.Schema.Types.ObjectId
 require('mongoose-type-email')
-
-var CustomerSchema = new Schema({
+const schema = new mongoose.Schema({
+  author: { type: ObjectId, index: { unique: false }, require: true, ref: `User`},
+  created: { type: Date, index: { unique: false }, require: true, 'default': Date.now },
+  updated: { type: Date, require: true, 'default': Date.now },
+  publication: Date,
   firstName: {
     type: String,
     required: true
@@ -22,4 +25,7 @@ var CustomerSchema = new Schema({
   streetAddress: String
 })
 
-module.exports = mongoose.model('Customer', CustomerSchema)
+const api = mongoose.model(`Customer`, schema)
+api.schema = schema
+
+module.exports = api

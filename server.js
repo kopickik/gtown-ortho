@@ -1,16 +1,16 @@
 'use strict'
 
-var express = require('express')
-var path = require('path')
-var favicon = require('serve-favicon')
-var logger = require('morgan')
-var cookieParser = require('cookie-parser')
-var bodyParser = require('body-parser')
-var mongoose = require('mongoose')
-var Customer = require('./models/Customer')
-var dbConfig = require('./config/db');
+const express = require('express')
+const path = require('path')
+const favicon = require('serve-favicon')
+const logger = require('morgan')
+const cookieParser = require('cookie-parser')
+const bodyParser = require('body-parser')
+const mongoose = require('mongoose')
+const Customer = require('./models/Customer')
+const dbConfig = require('./config/db');
 
-var app = express()
+const app = express()
 
 // configure app to use bodyParser()
 // this will allow us to get the data from a POST
@@ -86,8 +86,7 @@ router.route('/customers/:customer_id')
   .put(function (req, res, next) {
       Customer.findById(req.params.customer_id, function (err, customer) {
       if (err) {
-        
-        return res.status(400).send(err);
+        return res.status(400).json({messages: validation});
       }
       customer.firstName = req.body.firstName
       customer.lastName = req.body.lastName

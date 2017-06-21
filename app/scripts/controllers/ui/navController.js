@@ -5,5 +5,5 @@
 
     }
 
-    angular.module('gtoApp').controller('navCtrl', NavController);
+    angular.module('dgmApp').controller('navCtrl', NavController);
 })();

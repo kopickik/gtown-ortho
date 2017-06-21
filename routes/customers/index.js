@@ -13,6 +13,7 @@ router.get('/:customerId', single)
 router.delete('/:customerId', remove)
 router.get('/:customerId/view', single)
 router.get('/:customerId/edit', single)
+router.put('/:customerId', update)
 router.put('/:customerId/edit', update)
 
 

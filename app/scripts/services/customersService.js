@@ -2,16 +2,11 @@
   'use strict';
 
   function CustomersService($resource) {
-    function resourceErrorHandler(resp) {
-      console.log(resp)
-      $scope.$emit('error:resource', { errors: resp.data.message})
-    }
     return $resource('http://localhost:8080/api/customers/:id', {
       id: '@_id'
     }, {
         'get': {
-          method: 'GET',
-          interceptor: resourceErrorHandler,
+          method: 'GET'
           // other options:
             // url – {string|TrustedObject} – Absolute or relative URL of the resource that is being requested; or an object created by a call to $sce.trustAsResourceUrl(url).
           // params – {Object.<string|Object>} – Map of strings or objects which will be serialized with the paramSerializer and appended as GET parameters.
@@ -30,9 +25,9 @@
           // responseType - {string}}
       }
     }, {
-      'post': { method: 'POST', interceptor: resourceErrorHandler }
+      'post': { method: 'POST' }
     }, {
-      'update': { method: 'PUT', interceptor: resourceErrorHandler }
+      'update': { method: 'PUT' }
     }, {
       'delete': { method: 'DELETE' }
     }
@@ -43,6 +38,6 @@
       return $window.confirm(msg)
     }
   }
-  angular.module('gtoApp').factory('Customer', CustomersService)
+  angular.module('dgmApp').factory('Customer', CustomersService)
     .service('popupService', PopupService);
 })()

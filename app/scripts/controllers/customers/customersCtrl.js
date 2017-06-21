@@ -12,7 +12,7 @@
     };
   }
 
-  function customersViewCtrl($scope, $stateParams, Customer, Errors) {
+  function customersViewCtrl($scope, $stateParams, Customer) {
     Customer.get({ id: $stateParams.id })
       .$promise.then(function (customer) {
         $scope.customer = customer
@@ -21,7 +21,7 @@
       })
   }
 
-  function customersCreateCtrl($scope, $rootScope, $state, $stateParams, Customer, Errors) {
+  function customersCreateCtrl($scope, $rootScope, $state, $stateParams, Customer) {
     $scope.customer = new Customer();
 
     $scope.addCustomer = function () {
@@ -29,37 +29,30 @@
         // success callback
         $state.go('customers', resp)
       }, function (resp) {
-         $scope.statusMessage = resp.statusText;
-         $scope.status = resp.status;
-         $scope.errorMessage = resp.data.messages;
+
       });
     };
 
   }
 
   function customersEditCtrl($scope, $state, $stateParams, Customer) {
-
-    $scope.loadCustomer = function () {
-      Customer.get({ id: $stateParams.id })
-        .$promise.then(function (customer) {
-          $scope.customer = customer
-        })
+    function loadCustomer () {
+      $scope.customer = Customer.get({ id: $stateParams.id })
     }
-
-    $scope.loadCustomer();
-
-    $scope.updateCustomer = function () {
-      $scope.customer.$update(function (resp) {
+    function updateCustomer () {
+      $scope.customer.$update(function(resp) {
         $state.go('customers')
       }, function (resp) {
-        Errors.addError(resp.updateError)
+        // error handler
       })
     }
+
+    loadCustomer()
+    $scope.updateCustomer = updateCustomer
   }
 
-
-  angular.module('gtoApp').controller('customersCreateCtrl', customersCreateCtrl);
-  angular.module('gtoApp').controller('customersListCtrl', customersListCtrl);
-  angular.module('gtoApp').controller('customersViewCtrl', customersViewCtrl);
-  angular.module('gtoApp').controller('customersEditCtrl', customersEditCtrl);
+  angular.module('dgmApp').controller('customersCreateCtrl', customersCreateCtrl);
+  angular.module('dgmApp').controller('customersListCtrl', customersListCtrl);
+  angular.module('dgmApp').controller('customersViewCtrl', customersViewCtrl);
+  angular.module('dgmApp').controller('customersEditCtrl', customersEditCtrl);
 })();

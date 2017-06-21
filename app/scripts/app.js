@@ -1,7 +1,7 @@
 (function () {
     'use strict';
-    var gtoApp = angular.module('gtoApp', ['ngAnimate', 'ngResource', 'ngCookies', 'ngSanitize', 'ngTouch', 'ui.router', 'angularModalService']);
-    gtoApp.config(function ($stateProvider, $urlRouterProvider) {
+    var dgmApp = angular.module('dgmApp', ['ngAnimate', 'ngResource', 'ngCookies', 'ngSanitize', 'ngTouch', 'ui.router']);
+    dgmApp.config(function ($stateProvider, $urlRouterProvider) {
         $urlRouterProvider.otherwise('/home');
         $stateProvider.state('home', { // Home
             url: '/home',
@@ -46,11 +46,11 @@
         });
     });
 
-    gtoApp.config(function ($logProvider) {
+    dgmApp.config(function ($logProvider) {
         $logProvider.debugEnabled(true);
     });
 
-    gtoApp.run(['$rootScope', '$state', '$log', function ($rootScope, $state, $log) {
+    dgmApp.run(['$rootScope', '$state', '$log', function ($rootScope, $state, $log) {
         $rootScope.$state = $state;
         $rootScope.$on('$stateChangeStart', function (event, toState, toParams, fromState, fromParams) {
             $rootScope.loading = true;

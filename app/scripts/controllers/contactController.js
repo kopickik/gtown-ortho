@@ -7,5 +7,5 @@
          vm.something = 'something2';
     }
 
-    angular.module('gtoApp').controller('contactCtrl', ContactController);
+    angular.module('dgmApp').controller('contactCtrl', ContactController);
 }());

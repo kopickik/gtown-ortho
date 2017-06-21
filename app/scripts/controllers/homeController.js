@@ -5,5 +5,5 @@
         $log.debug('Home Controller');
     }
 
-    angular.module('gtoApp').controller('homeCtrl', HomeController);
+    angular.module('dgmApp').controller('homeCtrl', HomeController);
 })();

@@ -1,5 +1,5 @@
 {
-  "name": "Georgetown Orthodontics",
+  "name": "DGM App",
   "version": "2.0.1",
   "dependencies": {
     "angular": "^1.3.0",
@@ -20,7 +20,7 @@
     "font-awesome": "~4.4.0"
   },
   "appPath": "app",
-  "moduleName": "gtoApp",
+  "moduleName": "dgmApp",
   "resolutions": {
     "angular-ui-router": "0.3.2",
     "font-awesome": "^4.7.0",

@@ -5,5 +5,5 @@
 
     }
 
-    angular.module('gtoApp').controller('footerCtrl', FooterController);
+    angular.module('dgmApp').controller('footerCtrl', FooterController);
 })();

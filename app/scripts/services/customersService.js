@@ -4,7 +4,7 @@
   function CustomersService($resource) {
     function resourceErrorHandler(resp) {
       console.log(resp)
-      $scope.$emit('error:resource', { errors: resp.data.messages})
+      $scope.$emit('error:resource', { errors: resp.data.message})
     }
     return $resource('http://localhost:8080/api/customers/:id', {
       id: '@_id'
@@ -32,7 +32,7 @@
     }, {
       'post': { method: 'POST', interceptor: resourceErrorHandler }
     }, {
-      'update': { method: 'PUT' }
+      'update': { method: 'PUT', interceptor: resourceErrorHandler }
     }, {
       'delete': { method: 'DELETE' }
     }

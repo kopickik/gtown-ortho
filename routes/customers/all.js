@@ -10,5 +10,4 @@ module.exports = (req, res) => {
     res.status(200).send(customers)
   })
 
-  res.status(200).json({ cars });
 };

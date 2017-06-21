@@ -1,11 +1,7 @@
 (function () {
   'use strict';
-  function customersListCtrl($scope, $rootScope, $state, popupService, $window, Customer, Errors) {
+  function customersListCtrl($scope, $rootScope, $state, popupService, $window, Customer) {
     $scope.customers = Customer.query();
-    var errorListener = $rootScope.$on('error:saveError', function (event, data) {
-      $scope.errors = true;
-      $scope.errorMessage = data.data.messages;
-    });
 
     $scope.deleteCustomer = function (customer) {
       if (popupService.showPopup('Really delete this?')) {
@@ -14,12 +10,9 @@
         });
       }
     };
-
-    $scope.$on('destroy', errorListener);
   }
 
   function customersViewCtrl($scope, $stateParams, Customer, Errors) {
-    $scope.$on('error:resource', function() { console.log('Oh yeah, we got an error.')})
     Customer.get({ id: $stateParams.id })
       .$promise.then(function (customer) {
         $scope.customer = customer

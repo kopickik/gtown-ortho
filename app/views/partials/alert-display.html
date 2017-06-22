@@ -1,0 +1,7 @@
+<div ng-repeat="alert in vm.alerts" class="alert alert-{{alert.type}} alerts" role="alert">
+  <span class="fa fa-{{alert.icon}}"></span>&nbsp;
+  <button ng-click="vm.closeAlert($idx)" type="button" class="close" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+  {{alert.msg}}
+</div>

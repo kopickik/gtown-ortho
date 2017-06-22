@@ -1,13 +1,13 @@
 (function() {
     'use strict';
 
-    function MyAlertDisplay(alertsService) {
-        return {
+    function MyAlertDisplay(AlertsService) {
+        const myAlertDisplay = {
             restrict: 'AE',
-            template: '<div ng-repeat="alert in vm.alerts" class="alert alert-{{alert.type}}" role="alert"><button ng-click="vm.closeAlert($idx)" type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button>{{alert.msg}}</div>',
+            templateUrl: './views/partials/alert-display.html',
             controller: function () {
-                var vm = this;
-                vm.alertsService = alertsService
+                const vm = this;
+                vm.alertsService = AlertsService
                 vm.alerts = vm.alertsService.alerts
                 vm.closeAlert = (index) => {
                     vm.alertsService.closeAlert(index)
@@ -15,6 +15,7 @@
             },
             controllerAs: 'vm'
         }
+        return myAlertDisplay
     }
 
     angular.module('dgmApp').directive('myAlertDisplay', MyAlertDisplay);

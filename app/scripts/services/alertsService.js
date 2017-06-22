@@ -1,14 +1,15 @@
 (function () {
   'use strict'
 
-  function AlertsService($timeout) {
+  function AlertsService($timeout, $animate, $state) {
 
     const alertsService = {
       alerts: [],
-      add: function (type, msg, timeout) {
+      add: function (type, msg, icon, timeout) {
         alertsService.alerts.push({
           type: type,
           msg: msg,
+          icon: icon,
           close: function (){
             return alertsService.closeAlert(this)
           }
@@ -33,5 +34,5 @@
     return alertsService
 
   }
-  angular.module('dgmApp').factory('alertsService', AlertsService)
+  angular.module('dgmApp').factory('AlertsService', AlertsService)
 })()

@@ -1,12 +1,13 @@
 (function () {
   'use strict';
-  function customersListCtrl($scope, $state, popupService, $window, Customer) {
+  function customersListCtrl($scope, $state, popupService, Customer, AlertsService) {
     $scope.customers = Customer.query();
 
     $scope.deleteCustomer = function (customer) {
       if (popupService.showPopup('Really delete this?')) {
         customer.$remove(function () {
-          $window.location.href = '';
+          AlertsService.add('success', 'Customer deleted.', 'cut', 2000)
+          $state.go('home')
         });
       }
     };

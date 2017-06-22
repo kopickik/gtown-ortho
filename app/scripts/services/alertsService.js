@@ -1,7 +1,7 @@
 (function () {
   'use strict'
 
-  function AlertsService($timeout, $animate, $state) {
+  function AlertsService($timeout) {
 
     const alertsService = {
       alerts: [],

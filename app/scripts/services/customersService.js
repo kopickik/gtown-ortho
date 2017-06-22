@@ -2,8 +2,8 @@
   'use strict';
 
   function CustomersService($resource) {
-    return $resource('http://localhost:8080/api/customers/:id', {
-      id: '@_id'
+    return $resource('http://localhost:8080/api/customers/:customerId', {
+      customerId: '@_id'
     }, {
         'get': {
           method: 'GET'

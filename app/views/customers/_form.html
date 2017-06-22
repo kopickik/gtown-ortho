@@ -30,7 +30,7 @@
   <div class="form-group">
     <label for="phoneNumber" class="col-sm-2 col-sm-offset-2 control-label">phoneNumber</label>
     <div class="col-sm-6">
-      <input type="text" name="pn" ng-pattern="phoneRegex" ng-model="customer.phoneNumber" class="form-control" placeholder="Enter your phone number" />
+      <input type="text" ng-maxlength="phoneMaxLength" name="pn" ng-pattern="phoneRegex" ng-model="customer.phoneNumber" class="form-control" placeholder="Enter your phone number" />
       <span ng-show="!details.pn.$valid && !details.pn.$pristine" class="help-block" ng-show="errorName">Doesn't look like a phone number..</span>
     </div>
   </div>

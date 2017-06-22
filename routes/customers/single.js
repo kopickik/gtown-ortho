@@ -8,7 +8,7 @@ module.exports = (req, res, next) => {
     _id: customerId
   }, function (err, customer) {
     if (err) {
-      return res.send(err)
+      return res.status(404).send(err)
     }
     res.status(200).send(customer)
   })

@@ -19,7 +19,7 @@ module.exports = (req, res, next) => {
       if (err) {
         return res.send(err)
       }
-      res.json({ message: 'Customer updated!' });
+      res.status(200).send({ message: 'Customer updated!' })
     })
   })
 }

@@ -2,11 +2,21 @@
   'use strict';
 
   function CustomersService($resource) {
-    return $resource('http://localhost:8080/api/customers/:customerId', {
-      customerId: '@_id'
-    }, {
-        'get': {
-          method: 'GET'
+    return $resource('http://localhost:8080/api/customers/:customerId', {}, {
+      'get': {
+        method: 'get',
+        params: {customerId: '@id'}
+      },
+      'update': {
+        url: 'http://localhost:8080/api/customers/:customerId',
+        method: 'put',
+        params: {customerId: '@_id'}
+      },
+      'remove': {
+        method: 'delete',
+        params: {customerId: '@id'}
+      }
+    }
           // other options:
             // url – {string|TrustedObject} – Absolute or relative URL of the resource that is being requested; or an object created by a call to $sce.trustAsResourceUrl(url).
           // params – {Object.<string|Object>} – Map of strings or objects which will be serialized with the paramSerializer and appended as GET parameters.
@@ -23,14 +33,6 @@
           // timeout – {number|Promise} – timeout in milliseconds, or promise that should abort the request when resolved.
           // withCredentials - {boolean} - whether to set the withCredentials flag on the XHR object. See requests with credentials for more information.
           // responseType - {string}}
-      }
-    }, {
-      'post': { method: 'POST' }
-    }, {
-      'update': { method: 'PUT' }
-    }, {
-      'delete': { method: 'DELETE' }
-    }
   )};
 
   function PopupService($window) {

@@ -10,10 +10,10 @@ const remove = require('./remove')
 router.get('/', all)
 router.post('/', create)
 router.get('/:customerId', single)
+router.put('/:customerId', update)
 router.delete('/:customerId', remove)
 router.get('/:customerId/view', single)
 router.get('/:customerId/edit', single)
-router.put('/:customerId', update)
 router.put('/:customerId/edit', update)
 
 

@@ -1,5 +1,6 @@
 @import "variables";
 @import "mixins";
+@import "overrides";
 
 // taken from: https://github.com/BlackrockDigital/startbootstrap-grayscale
 
@@ -232,7 +233,7 @@ a {
 
 .btn {
     text-transform: uppercase;
-    font-family: "Anonymous Pro for Powerline", "Menlo", "Monaco", "Courier New", monospace;
+    font-family: $mono;
     font-weight: 400;
     -webkit-transition: all .3s ease-in-out;
     -moz-transition: all .3s ease-in-out;
@@ -308,4 +309,23 @@ ul.banner-social-buttons {
     &:hover {
         text-shadow: 1px 2px 0 rgba(255,255,255, 0.1)
     }
+}
+
+.alerts {
+    &.ng-move,
+    &.ng-leave {
+        @include transition(opacity 500ms cubic-bezier(0.260, 0.225, 0.980, 0.280));
+        opacity: 1
+    }
+    &.ng-leave-active {
+        @include transition(opacity 500ms cubic-bezier(0.260, 0.225, 0.980, 0.280));
+        opacity: 0
+    }
+}
+
+.help-block {
+    margin: 0;
+    padding: 16px 0 0;
+    font-size: 12px;
+    font-family: $mono
 }

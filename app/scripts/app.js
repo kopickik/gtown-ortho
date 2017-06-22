@@ -33,7 +33,7 @@
         .state('editCustomer', {
             url: '/customers/:id/edit',
             templateUrl: './views/customers/customer-edit.html',
-            data: { pageTitle: 'Customers'},
+            data: { pageTitle: 'Customers - Edit'},
             controller: 'customersEditCtrl',
             controllerAs: 'ctrl'
         })
@@ -46,25 +46,27 @@
         });
     });
 
-    dgmApp.config(function ($logProvider) {
-        $logProvider.debugEnabled(true);
-    });
+    // *** debug the app by uncommenting these lines *** //
 
-    dgmApp.run(['$rootScope', '$state', '$log', function ($rootScope, $state, $log) {
-        $rootScope.$state = $state;
-        $rootScope.$on('$stateChangeStart', function (event, toState, toParams, fromState, fromParams) {
-            $rootScope.loading = true;
-            $rootScope.navOpen = false;
-            $log.debug('$stateChangeStart:', event, toState, toParams, fromState, fromParams);
-        });
+    // dgmApp.config(function ($logProvider) {
+    //     $logProvider.debugEnabled(true);
+    // });
+    
+    // dgmApp.run(['$rootScope', '$state', '$log', function ($rootScope, $state, $log) {
+    //     $rootScope.$state = $state;
+    //     $rootScope.$on('$stateChangeStart', function (event, toState, toParams, fromState, fromParams) {
+    //         $rootScope.loading = true;
+    //         $rootScope.navOpen = false;
+    //         $log.debug('$stateChangeStart:', event, toState, toParams, fromState, fromParams);
+    //     });
 
-        $rootScope.$on('$stateChangeSuccess', function (event, toState, toParams, fromState, fromParams) {
-            $rootScope.loading = false;
+    //     $rootScope.$on('$stateChangeSuccess', function (event, toState, toParams, fromState, fromParams) {
+    //         $rootScope.loading = false;
 
-            $log.debug('$stateChangeSuccess:', event, toState, toParams, fromState, fromParams);
+    //         $log.debug('$stateChangeSuccess:', event, toState, toParams, fromState, fromParams);
 
-            //ga('send', 'pageview', { page: toState.data.pageTitle }); // Google Analytics
-        });
-    }]);
+    //         //ga('send', 'pageview', { page: toState.data.pageTitle }); // Google Analytics
+    //     });
+    // }]);
 
 })();

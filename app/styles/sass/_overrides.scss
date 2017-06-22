@@ -1,0 +1,16 @@
+.has-error .help-block,
+.has-error .control-label,
+.has-error .radio,
+.has-error .checkbox,
+.has-error .radio-inline,
+.has-error .checkbox-inline,
+.has-error.radio label,
+.has-error.checkbox label,
+.has-error.radio-inline label,
+.has-error.checkbox-inline label {
+  color: orangered
+}
+.has-error .form-control {
+  border: 2px solid lightpink;
+  box-shadow: inset 0 2px 2px rgba(0, 0, 0, 0.09)
+}

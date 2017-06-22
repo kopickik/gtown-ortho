@@ -10,7 +10,7 @@ version 0.11.1.
 
 ## Testing
 
-Running `grunt test` will run the unit tests with karma. (no tests). The grunt serve task will fire up nodemon in debug mode, and you can use a debugger to pause the app while interacting with the API.  You can also use a REST testing application, such as Postman.
+Running `grunt test` will run the unit tests with karma. (there are no tests). The grunt serve task will fire up nodemon in debug mode, and you can use a debugger to pause the app while interacting with the API.  You can also use a REST testing application, such as Postman.
 
 ## Structure
 
@@ -22,4 +22,4 @@ The requirements called for validating user inputs. These should trigger from `_
 
 ## WIP - use at your own peril.
 
-The update customer service is currently broken, as I borked the `customersCtrl.js` update method. I may end up using $http instead of $resource in the `customersService.js` as $http provides a clearer path to intercepting API errors. I may just need to keep experimenting with the [$resource interceptor][https://docs.angularjs.org/api/ngResource/service/$resource] and try a few more things. 
+I may end up using $http instead of $resource in the `customersService.js` as $http provides a clearer path to intercepting API errors. I may just need to keep experimenting with the [$resource interceptor][https://docs.angularjs.org/api/ngResource/service/$resource] and try a few more things. 

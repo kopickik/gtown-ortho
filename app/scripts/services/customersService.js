@@ -2,19 +2,17 @@
   'use strict';
 
   function CustomersService($resource) {
-    return $resource('http://localhost:8080/api/customers/:customerId', {}, {
+    return $resource('http://localhost:8080/api/customers/:customerId', {
+      customerId: '@_id'
+    }, {
       'get': {
-        method: 'get',
-        params: {customerId: '@id'}
+        method: 'get'
       },
       'update': {
-        url: 'http://localhost:8080/api/customers/:customerId',
         method: 'put',
-        params: {customerId: '@_id'}
       },
       'remove': {
         method: 'delete',
-        params: {customerId: '@id'}
       }
     }
           // other options:

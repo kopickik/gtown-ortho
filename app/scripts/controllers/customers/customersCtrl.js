@@ -5,7 +5,7 @@
 
     $scope.deleteCustomer = function (customer) {
       if (popupService.showPopup('Really delete this?')) {
-        customer.$delete(function () {
+        customer.$remove(function () {
           $window.location.href = '';
         });
       }

@@ -23,3 +23,7 @@ The requirements called for validating user inputs. These should trigger from `_
 ## WIP - use at your own peril.
 
 I may end up using $http instead of $resource in the `customersService.js` as $http provides a clearer path to intercepting API errors. I may just need to keep experimenting with the [$resource interceptor][https://docs.angularjs.org/api/ngResource/service/$resource] and try a few more things. 
+
+## Tips
+
+To force rebuild your styles while `grunt serve` is churning, you can open a separate terminal window and run `grunt sass && grunt build` to recreate the styles. The load order can be affected in `index.html`.

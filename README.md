@@ -18,7 +18,7 @@ The `Customer` model is derived from a [mongoose][http://mongoosejs.com/docs/api
 
 ## Validation
 
-The requirements called for validating user inputs. These should trigger from `_form.html`.
+The requirements called for validating user inputs. These should trigger from `_form.html`. **Now working!**
 
 ## WIP - use at your own peril.
 

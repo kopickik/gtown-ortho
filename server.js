@@ -32,16 +32,16 @@ app.use(function (req, res, next) {
   next();
 });
 
-app.use('/api', routes)
-
-app.listen(port)
-console.log('Express app listening on port ' + port)
-
 // Base setup (db)
 mongoose.Promise = global.Promise
 mongoose.connect(dbConfig.url);
 const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'MongoDB connection error:'));
+
+app.use('/api', routes)
+
+app.listen(port)
+console.log('Express app listening on port ' + port)
 
 app.use(express.static(__dirname + '/app'));
 

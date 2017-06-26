@@ -24,7 +24,18 @@ const schema = new mongoose.Schema({
   streetAddress: String
 })
 
-const api = mongoose.model(`Customer`, schema)
+schema.virtual('name')
+  .get(function() {
+    return this.firstName + ' ' + this.lastName
+  })
+
+schema.virtual('url')
+  .get(function () {
+    return '/api/customers/' + this._id
+  })
+
+const api = mongoose.model('Customer', schema)
+
 api.schema = schema
 
 module.exports = api

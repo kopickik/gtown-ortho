@@ -48,25 +48,12 @@
 
     // *** debug the app by uncommenting these lines *** //
 
-    // dgmApp.config(function ($logProvider) {
-    //     $logProvider.debugEnabled(true);
-    // });
+    dgmApp.config(function ($logProvider) {
+        $logProvider.debugEnabled(true);
+    });
     
-    // dgmApp.run(['$rootScope', '$state', '$log', function ($rootScope, $state, $log) {
-    //     $rootScope.$state = $state;
-    //     $rootScope.$on('$stateChangeStart', function (event, toState, toParams, fromState, fromParams) {
-    //         $rootScope.loading = true;
-    //         $rootScope.navOpen = false;
-    //         $log.debug('$stateChangeStart:', event, toState, toParams, fromState, fromParams);
-    //     });
-
-    //     $rootScope.$on('$stateChangeSuccess', function (event, toState, toParams, fromState, fromParams) {
-    //         $rootScope.loading = false;
-
-    //         $log.debug('$stateChangeSuccess:', event, toState, toParams, fromState, fromParams);
-
-    //         //ga('send', 'pageview', { page: toState.data.pageTitle }); // Google Analytics
-    //     });
-    // }]);
+    dgmApp.run(['$rootScope', '$state', '$log', function ($rootScope, $state, $log) {
+        $rootScope.$state = $state;
+    }]);
 
 })();

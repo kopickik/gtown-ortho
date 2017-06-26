@@ -16,6 +16,7 @@
   function customersViewCtrl($scope, $state, $stateParams, Customer, AlertsService) {
     const customer = Customer.get({ customerId: $stateParams.id }, function(resp) {
       $scope.customer = customer
+      $state.current.data.pageTitle = `Viewing ` + $scope.customer.firstName
     }, function (err) {
       AlertsService.add('danger', err.statusText, 'exclamation-circle')
     })
@@ -42,6 +43,7 @@
       Customer.get({customerId: $stateParams.id})
       .$promise.then(function(customer) {
         $scope.customer = customer
+        $state.current.data.pageTitle = `Editing ` + $scope.customer.firstName
       })
     }
 

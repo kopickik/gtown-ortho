@@ -14,7 +14,7 @@
       <span ng-show="details.ln.$error.required && !details.ln.$pristine" class="help-block">Last name is required.</span>
     </div>
   </div>
-  <div class="form-group" ng-class="{'has-error': details.em.$error.required && !details.em.$pristine}">
+  <div class="form-group" ng-class="{'has-error': (details.em.$error.required || details.em.$error.email) && !details.em.$pristine}">
     <label for="email" class="col-sm-2 control-label">Email</label>
     <div class="col-sm-6">
       <input type="email" name="em" ng-model="customer.email" class="form-control" placeholder="Enter a valid email address" required/>

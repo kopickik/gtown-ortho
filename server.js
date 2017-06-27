@@ -37,14 +37,10 @@ mongoose.Promise = global.Promise
 mongoose.connect(dbConfig.url);
 const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'MongoDB connection error:'));
-
+app.use(express.static(__dirname + '/app'));
+app.use(logger('dev'))
 app.use('/api', routes)
 
 app.listen(port)
 console.log('Express app listening on port ' + port)
 
-app.use(express.static(__dirname + '/app'));
-
-app.get('/', function (req, res) {
-  res.sendfile('./app/index.html');
-});

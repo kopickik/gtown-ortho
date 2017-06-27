@@ -73,7 +73,7 @@ module.exports = function (grunt) {
                 script: 'server.js',
                 options: {
                     args: ['dev'],
-                    nodeArgs: ['--debug']
+                    nodeArgs: ['--inspect']
                 }
             }
         },

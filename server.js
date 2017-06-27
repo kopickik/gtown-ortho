@@ -18,7 +18,6 @@ const app = express()
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json())
 
-// set view engine
 app.set('views', path.join(__dirname, 'app/views'));
 app.set('view engine', 'pug');
 
@@ -35,11 +34,14 @@ app.use(function (req, res, next) {
 // Base setup (db)
 mongoose.Promise = global.Promise
 mongoose.connect(dbConfig.url);
+
 const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'MongoDB connection error:'));
+
 app.use(express.static(__dirname + '/app'));
 app.use(logger('dev'))
-app.use('/api', routes)
+
+app.use('/api', routes)// all of our API routes
 
 app.listen(port)
 console.log('Express app listening on port ' + port)

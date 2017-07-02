@@ -10,7 +10,7 @@
       "request": "launch",
       "program": "${workspaceRoot}/server.js",
       "preLaunchTask": null,
-      "runtimeExecutable": null,
+      "runtimeExecutable": "${workspaceRoot}/node_modules/nodemon/bin/nodemon.js",
       "runtimeArgs": [
         "--nolazy"
       ],

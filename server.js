@@ -7,6 +7,7 @@ const logger = require('morgan')
 const cookieParser = require('cookie-parser')
 const bodyParser = require('body-parser')
 const mongoose = require('mongoose')
+const helmet = require('helmet')
 const Customer = require('./models/Customer')
 const dbConfig = require('./config/db')
 const routes = require('./routes')
@@ -23,13 +24,7 @@ app.set('view engine', 'pug');
 
 var port = process.env.PORT || 8080
 
-app.use(function (req, res, next) {
-  res.setHeader('Access-Control-Allow-Origin', 'http://localhost:9000');
-  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
-  res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
-  res.setHeader('Access-Control-Allow-Credentials', true);
-  next();
-});
+app.use(helmet())
 
 // Base setup (db)
 mongoose.Promise = global.Promise

@@ -6,8 +6,9 @@ version 0.11.1.
 ## Build & development
 1. Run `npm install` to install project dependencies.
 2. Run `bower install` to install client dependencies.
-3. Run `mongod --dbpath ./data/db` in one terminal window to start the database.
-4. Run `grunt serve` in another terminal window to start our express API and kick off the connect web server.
+3. `mkdir data/db`
+4. Run `mongod --dbpath ./data/db` in one terminal window to start the database.
+5. Run `grunt serve` in another terminal window to start our express API and kick off the connect web server.
 
 ## Testing
 
@@ -15,7 +16,7 @@ Running `grunt test` will run the unit tests with karma. (there are no tests). T
 
 ## Structure
 
-The `Customer` model is derived from a [mongoose][http://mongoosejs.com/docs/api.html] Schema. Backend routes are defined in `routes/`. Angular UI Router routes are defined in `app/scripts/app.js`.
+The `Customer` model is derived from a [mongoose](http://mongoosejs.com/docs/api.html) Schema. Backend routes are defined in `routes/`. Angular UI Router routes are defined in `app/scripts/app.js`.
 
 ## Validation
 
@@ -23,7 +24,7 @@ The requirements called for validating user inputs. These should trigger from `_
 
 ## WIP - use at your own peril.
 
-I may end up using $http instead of $resource in the `customersService.js` as $http provides a clearer path to intercepting API errors. I may just need to keep experimenting with the [$resource interceptor][https://docs.angularjs.org/api/ngResource/service/$resource] and try a few more things. 
+I may end up using $http instead of $resource in the `customersService.js` as $http provides a clearer path to intercepting API errors. I may just need to keep experimenting with the [$resource interceptor](https://docs.angularjs.org/api/ngResource/service/$resource) and try a few more things.
 
 ## Tips
 

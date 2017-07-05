@@ -3,6 +3,12 @@
   function customersListCtrl($scope, $state, popupService, Customer, AlertsService) {
     $scope.customers = Customer.query();
 
+    $scope.showFullDetails = function () {
+      _.map($scope.customers, function (customer) {
+        customer.customerFull = $scope.fullDetails
+      })
+    }
+
     $scope.deleteCustomer = function (customer) {
       if (popupService.showPopup('Really delete this?')) {
         customer.$remove(function () {

@@ -1,17 +1,22 @@
 <my-alert-display></my-alert-display>
-</div>
 <a ui-sref="createCustomer" class="btn btn-primary btn-lg">Add New Customer</a>
 <hr>
 <table class="table table-bordered table-hover customers-table">
   <thead>
-    <th><h3>All Customers</h3>
+    <th><h3 class="pull-left">All Customers</h3>
+      <p style="margin-top:24px;">&nbsp;&nbsp;&nbsp;<small> detail view:</small>
+        <input type="checkbox"
+          ng-model="fullDetails"
+          ng-click="showFullDetails()"
+          aria-label="Show All Customers' Details">&nbsp;&nbsp;
+      </p>
     <th><h3>Actions</h3></th>
   </thead>
   <tbody>
     <tr ng-repeat="customer in customers">
       <td>{{customer.firstName + ' ' + customer.lastName}} <br>
-        <small>full details:</small> <input type="checkbox" ng-model="customerFull" aria-label="Toggle ngShow">&nbsp;&nbsp;
-        <span class="full-details check-element animate-show-hide" ng-show="customerFull">
+        <small>full details:</small> <input type="checkbox" ng-model="customer.customerFull" ng-change="detailsToggled()" aria-label="Toggle ngShow">&nbsp;&nbsp;
+        <span class="full-details check-element animate-show-hide" ng-show="customer.customerFull">
           {{customer.email}} • {{customer.streetAddress}} • {{customer.phoneNumber}}
         </span>
       <td>

@@ -14,26 +14,31 @@ const routes = require('./routes')
 
 const app = express()
 
-// configure app to use bodyParser()
-// this will allow us to get the data from a POST
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json())
 
-app.set('views', path.join(__dirname, 'app/views'));
-app.set('view engine', 'pug');
+app.set('views', path.join(__dirname, 'app/views'))
+app.set('view engine', 'pug')
 
 var port = process.env.PORT || 8080
 
 app.use(helmet())
 
+app.use(function (req, res, next) {
+  res.header('Access-Control-Allow-Origin', 'http://localhost:9000')
+  res.header('Access-Control-Allow-Methods', 'GET,POST,PUT,PATCH,DELETE')
+  res.header('Access-Control-Allow-Headers', 'Origin,X-Requested-With,Content-Type,Accept')
+  next()
+})
+
 // Base setup (db)
 mongoose.Promise = global.Promise
-mongoose.connect(dbConfig.url);
+mongoose.connect(dbConfig.url)
 
-const db = mongoose.connection;
-db.on('error', console.error.bind(console, 'MongoDB connection error:'));
+const db = mongoose.connection
+db.on('error', console.error.bind(console, 'MongoDB connection error:'))
 
-app.use(express.static(__dirname + '/app'));
+app.use(express.static(__dirname + '/app'))
 app.use(logger('dev'))
 
 app.use('/api', routes)// all of our API routes

@@ -6,11 +6,12 @@ version 0.11.1.
 ## Build & development
 1. Run `npm install` to install project dependencies.
 2. Run `bower install` to install client dependencies.
-3. Run `grunt serve` to start our express API and kick off the connect web server.
+3. Run `mongod --dbpath ./data/db` in one terminal window to start the database.
+4. Run `grunt serve` in another terminal window to start our express API and kick off the connect web server.
 
 ## Testing
 
-Running `grunt test` will run the unit tests with karma. (there are no tests). The grunt serve task will fire up nodemon in debug mode, and you can use a debugger to pause the app while interacting with the API.  You can also use a REST testing application, such as Postman.
+Running `grunt test` will run the unit tests with karma. (there are no tests). The grunt serve task will fire up nodemon in debug mode, and you can use a debugger to pause the app while interacting with the API. You can also use a REST testing application, such as Postman.
 
 ## Structure
 

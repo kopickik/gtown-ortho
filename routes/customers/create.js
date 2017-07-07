@@ -12,10 +12,10 @@ module.exports = (req, res, next) => {
     phoneNumber: body.phoneNumber
   });
 
-  customer.save(function (err) {
+  customer.save(function (err, customer) {
     if (err) {
-      return res.send(err)
+      return res.status(500).send(err)
     }
-    return res.send({ message: 'Customer created!' })
+    return res.status(200).send({ message: 'Customer created!' })
   })
 };

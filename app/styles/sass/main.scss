@@ -326,16 +326,19 @@ ul.banner-social-buttons {
     font-family: $mono
 }
 
-.spirals {
-    path {
-        @include transition(stroke-dashoffset 1s ease-in);
-        stroke-dasharray: 4550.2333984375 4550.2333984375;
-        stroke-dashoffset: 4550;
+.spirals, .wedge {
+    path, polygon, polyline {
+        @include transition(all 1.9s ease-out);
+        stroke-dasharray: 132.82217407226562 132.82217407226562;
+        stroke-dashoffset: 132.82217407226562;
     }
     &:hover {
-        path {
-            @include transition(stroke-dashoffset 2s ease-out);
+        path, polygon, polyline {
+            @include transition(all 2s ease-out);
+            transform: scale(.9);
             stroke-dashoffset: 0;
+            opacity: 0.7;
         }
     }
 }
+

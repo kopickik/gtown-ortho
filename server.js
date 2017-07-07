@@ -39,7 +39,7 @@ const db = mongoose.connection
 db.on('error', console.error.bind(console, 'MongoDB connection error:'))
 
 app.use(express.static(__dirname + '/app'))
-app.use(logger('dev'))
+app.use(logger('short'))
 
 app.use('/api', routes)// all of our API routes
 

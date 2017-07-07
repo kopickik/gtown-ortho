@@ -8,6 +8,7 @@ module.exports = (req, res, next) => {
     _id: customerId
   }, function (err, customer) {
     if (err) {
+      err.message = 'Could not fetch customer with ID ' + req._id
       return res.status(404).send(err)
     }
     res.status(200).send(customer)

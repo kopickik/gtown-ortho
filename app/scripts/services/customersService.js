@@ -6,7 +6,8 @@
       customerId: '@_id'
     }, {
       'get': {
-        method: 'get'
+        method: 'get',
+        cache: true
       },
       'update': {
         method: 'put',

@@ -297,17 +297,19 @@ ul.banner-social-buttons {
   font-size: 12px;
   font-family: "Anonymous Pro for Powerline", "Menlo", "Monaco", "Courier New", monospace; }
 
-.spirals path {
-  -moz-transition: stroke-dashoffset 1s ease-in;
-  -o-transition: stroke-dashoffset 1s ease-in;
-  -webkit-transition: stroke-dashoffset 1s ease-in;
-  transition: stroke-dashoffset 1s ease-in;
-  stroke-dasharray: 4550.2333984375 4550.2333984375;
-  stroke-dashoffset: 4550; }
+.spirals path, .spirals polygon, .spirals polyline, .wedge path, .wedge polygon, .wedge polyline {
+  -moz-transition: all 1.9s ease-out;
+  -o-transition: all 1.9s ease-out;
+  -webkit-transition: all 1.9s ease-out;
+  transition: all 1.9s ease-out;
+  stroke-dasharray: 132.82217407226562 132.82217407226562;
+  stroke-dashoffset: 132.82217407226562; }
 
-.spirals:hover path {
-  -moz-transition: stroke-dashoffset 2s ease-out;
-  -o-transition: stroke-dashoffset 2s ease-out;
-  -webkit-transition: stroke-dashoffset 2s ease-out;
-  transition: stroke-dashoffset 2s ease-out;
-  stroke-dashoffset: 0; }
+.spirals:hover path, .spirals:hover polygon, .spirals:hover polyline, .wedge:hover path, .wedge:hover polygon, .wedge:hover polyline {
+  -moz-transition: all 2s ease-out;
+  -o-transition: all 2s ease-out;
+  -webkit-transition: all 2s ease-out;
+  transition: all 2s ease-out;
+  transform: scale(0.9);
+  stroke-dashoffset: 0;
+  opacity: 0.7; }

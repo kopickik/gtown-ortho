@@ -1,7 +1,11 @@
 (function () {
   'use strict';
   function customersListCtrl($scope, $state, popupService, Customer, AlertsService) {
-    $scope.customers = Customer.query();
+    $scope.customers = Customer.query(function (data) {
+      AlertsService.add('info', 'Fetched customers.', 'cubes', 1500)
+    }, function (err) {
+      AlertsService.add('warning', 'Problem with the server.', 'exclamation-circle')
+    });
 
     $scope.showFullDetails = function () {
       _.map($scope.customers, function (customer) {
@@ -11,8 +15,8 @@
 
     $scope.deleteCustomer = function (customer) {
       if (popupService.showPopup('Really delete this?')) {
-        customer.$remove(function () {
-          AlertsService.add('success', 'Customer deleted.', 'cut', 2000)
+        customer.$remove(function (resp) {
+          AlertsService.add('success', resp.message, 'cut', 2000)
           $state.go('home')
         });
       }
@@ -50,6 +54,8 @@
       .$promise.then(function(customer) {
         $scope.customer = customer
         $state.current.data.pageTitle = `Editing ` + $scope.customer.firstName
+      }, function (error) {
+        AlertsService.add('danger', error.statusText, 'exclamation-triangle')
       })
     }
 

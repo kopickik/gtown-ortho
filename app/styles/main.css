@@ -1,3 +1,43 @@
+@-webkit-keyframes slide-down {
+  0% {
+    opacity: 1; }
+  90% {
+    opacity: 0; } }
+
+@-moz-keyframes slide-down {
+  0% {
+    opacity: 1; }
+  90% {
+    opacity: 0; } }
+
+@-ms-keyframes slide-down {
+  0% {
+    opacity: 1; }
+  90% {
+    opacity: 0; } }
+
+@-o-keyframes slide-down {
+  0% {
+    opacity: 1; }
+  90% {
+    opacity: 0; } }
+
+@keyframes slide-down {
+  0% {
+    opacity: 1; }
+  90% {
+    opacity: 0; } }
+
+@-ms-keyframes spiral {}.element {
+  width: 100px;
+  height: 100px;
+  background: black;
+  -webkit-animation: slide-down 5s 3;
+  -moz-animation: slide-down 5s 3;
+  -ms-animation: slide-down 5s 3;
+  -o-animation: slide-down 5s 3;
+  animation: slide-down 5s 3; }
+
 .has-error .help-block,
 .has-error .control-label,
 .has-error .radio,
@@ -34,7 +74,7 @@ a {
   transition: all .2s ease-in-out; }
   a:hover, a:focus {
     text-decoration: none;
-    color: #1d9b6c; }
+    color: #005fa9; }
 
 .navbar-custom {
   margin-bottom: 0;
@@ -189,14 +229,14 @@ a {
   border-radius: 0; }
 
 .btn-default {
-  border: 1px solid #42DCA3;
-  color: #42DCA3;
+  border: 1px solid #1097FF;
+  color: #1097FF;
   background-color: transparent; }
   .btn-default:hover, .btn-default:focus {
-    border: 1px solid #42DCA3;
+    border: 1px solid #1097FF;
     outline: none;
     color: black;
-    background-color: #42DCA3; }
+    background-color: #1097FF; }
 
 ul.banner-social-buttons {
   margin-top: 0; }
@@ -256,3 +296,18 @@ ul.banner-social-buttons {
   padding: 16px 0 0;
   font-size: 12px;
   font-family: "Anonymous Pro for Powerline", "Menlo", "Monaco", "Courier New", monospace; }
+
+.spirals path {
+  -moz-transition: stroke-dashoffset 1s ease-in;
+  -o-transition: stroke-dashoffset 1s ease-in;
+  -webkit-transition: stroke-dashoffset 1s ease-in;
+  transition: stroke-dashoffset 1s ease-in;
+  stroke-dasharray: 4550.2333984375 4550.2333984375;
+  stroke-dashoffset: 4550; }
+
+.spirals:hover path {
+  -moz-transition: stroke-dashoffset 2s ease-out;
+  -o-transition: stroke-dashoffset 2s ease-out;
+  -webkit-transition: stroke-dashoffset 2s ease-out;
+  transition: stroke-dashoffset 2s ease-out;
+  stroke-dashoffset: 0; }

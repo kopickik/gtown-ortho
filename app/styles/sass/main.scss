@@ -28,7 +28,7 @@ a {
     &:hover,
     &:focus {
         text-decoration: none;
-        color: darken($primary,20%);
+        color: darken($color-primary-0,20%);
     }
 }
 
@@ -238,15 +238,15 @@ a {
 }
 
 .btn-default {
-    border: 1px solid $primary;
-    color: $primary;
+    border: 1px solid $color-primary-0;
+    color: $color-primary-0;
     background-color: transparent;
     &:hover,
     &:focus {
-        border: 1px solid $primary;
+        border: 1px solid $color-primary-0;
         outline: none;
         color: black;
-        background-color: $primary;
+        background-color: $color-primary-0;
     }
 }
 
@@ -324,4 +324,18 @@ ul.banner-social-buttons {
     padding: 16px 0 0;
     font-size: 12px;
     font-family: $mono
+}
+
+.spirals {
+    path {
+        @include transition(stroke-dashoffset 1s ease-in);
+        stroke-dasharray: 4550.2333984375 4550.2333984375;
+        stroke-dashoffset: 4550;
+    }
+    &:hover {
+        path {
+            @include transition(stroke-dashoffset 2s ease-out);
+            stroke-dashoffset: 0;
+        }
+    }
 }

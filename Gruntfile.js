@@ -115,7 +115,7 @@ module.exports = function (grunt) {
             },
             styles: {
                 files: ['<%= yeoman.app %>/styles/sass/main.scss'],
-                tasks: ['sass', 'newer:copy:styles', 'autoprefixer']
+                tasks: ['sass', 'newer:copy:styles', 'autoprefixer', 'includeSource:app']
             },
             gruntfile: {
                 files: ['Gruntfile.js']
@@ -482,7 +482,6 @@ module.exports = function (grunt) {
             'concurrent:server',
             'autoprefixer:server',
             'connect:livereload',
-            'nodemon',
             'watch'
         ]);
     });

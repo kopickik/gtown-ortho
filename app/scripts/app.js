@@ -4,7 +4,7 @@
     dgmApp.config(function ($stateProvider, $urlRouterProvider) {
         $urlRouterProvider.otherwise('/home');
         $stateProvider.state('home', { // Home
-            url: '/home',
+            url: 'home',
             templateUrl: './views/home.html',
             data: { pageTitle: 'Welcome' },
             controller: 'homeCtrl',
@@ -43,7 +43,14 @@
             data: { pageTitle: 'Customers - Create'},
             controller: 'customersCreateCtrl',
             controllerAs: 'ctrl'
-        });
+        })
+        .state('secrets', {
+            url: '/secrets',
+            templateUrl: './views/partials/secrets.html',
+            data: { pageTitle: 'Secrets' },
+            controller: 'homeCtrl',
+            controllerAs: 'ctrl'
+        })
     });
 
     // *** debug the app by uncommenting these lines *** //

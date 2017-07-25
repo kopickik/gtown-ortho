@@ -326,19 +326,64 @@ ul.banner-social-buttons {
     font-family: $mono
 }
 
-.spirals, .wedge {
-    path, polygon, polyline {
-        @include transition(all 1.9s ease-out);
-        stroke-dasharray: 132.82217407226562 132.82217407226562;
-        stroke-dashoffset: 132.82217407226562;
-    }
+// .spirals, .wedge {
+//     path, polygon, polyline {
+//         @include transition(all 1.9s ease-out);
+//         stroke-dasharray: 1464.3775634765625;
+//         stroke-dashoffset: 1464.3775634765625;
+//     }
+//     &:hover {
+//         path, polygon, polyline {
+//             @include transition(all 2s ease-out);
+//             stroke-dashoffset: 0;
+//             opacity: 0.7;
+//         }
+//     }
+// }
+
+.triangle-thing {
+  height: 100px;
+  width: 100px;
+  border: 1px solid rgba(255, 255, 255, 0.69);
+}
+
+.wedge {
+    height: 40px;
+    width: 40px;
+    background: url('../images/lk-look-right.png');
     &:hover {
-        path, polygon, polyline {
-            @include transition(all 2s ease-out);
-            transform: scale(.9);
-            stroke-dashoffset: 0;
-            opacity: 0.7;
-        }
+        animation: walk-across 6s 2;
     }
 }
+
+@keyframes walk-down {
+    20% {background-image: url('../images/left.png') }
+    40% {background-image: url('../images/right.png')}
+    60% {background-image: url('../images/left2.png')}
+    80% {background-image: url('../images/right2.png')}
+    100% {background-image: url('../images/fini.png')}
+}
+
+@keyframes walk-across {
+    10% {background-image: url('../images/lk-look-right.png') }
+    20% {background-image: url('../images/lk-right.png')}
+    25% {background-image: url('../images/lk-look-right.png') }
+    30% {background-image: url('../images/lk-left.png')}
+    35% {background-image: url('../images/lk-look-right.png') }
+    40% {background-image: url('../images/lk-right.png')}
+    45% {background-image: url('../images/lk-look-right.png') }
+    50% {background-image: url('../images/lk-left.png') }
+    55% {background-image: url('../images/lk-look-right.png') }
+    60% {background-image: url('../images/lk-right.png')}
+    65% {background-image: url('../images/lk-look-right.png') }
+    70% {background-image: url('../images/lk-left.png')}
+    90% {background-image: url('../images/lk-arms-down.png')}
+    100% {background-image: url('../images/lk-look-right.png')}
+}
+
+
+
+
+
+
 

@@ -32,7 +32,7 @@
           // timeout – {number|Promise} – timeout in milliseconds, or promise that should abort the request when resolved.
           // withCredentials - {boolean} - whether to set the withCredentials flag on the XHR object. See requests with credentials for more information.
           // responseType - {string}}
-  )};
+  )}
 
   function PopupService($window) {
     this.showPopup = function (msg) {
